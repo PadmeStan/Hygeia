@@ -1,0 +1,586 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+:root{
+  
+}
+
+
+body{
+  background-color: #fff;
+}
+
+.containerPai{
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  width: 80%;
+  height: 750px;
+  background-color: #fff;
+  border-radius: 32px;
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+  border: 3px solid #004aad;
+}
+
+.esquerda, .direita{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.formLogin , .facaLogin , .formCadastro, .facaCadastro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.facaLogin, .facaCadastro{
+  gap: 20px;
+}
+
+.formContainer{
+  border: 2.5px solid #004aad;
+  padding: 10% 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 22px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-container{
+  width: 26vw;
+  height: 4.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1.5px solid #004aad;
+  overflow: hidden;
+  transition: all 0.2s ease; /* Suaviza a mudança */
+    &:focus{
+    outline: 2px solid #168fff;
+  }
+}
+
+/* 2. Remove o estilo padrão do INPUT interno */
+.input-container input {
+  border: none;
+  outline: none; 
+  width: 100%;
+  background: transparent;
+}
+
+/* 3. A MÁGICA: Quando o input é clicado, a DIV ganha o contorno */
+.input-container:focus-within {
+  border-color: #007bff; /* Muda a cor da borda da div */
+  outline: 2px solid rgba(0, 123, 255, 0.3); /* Simula um outline suave na div */
+  outline-offset: 2px;
+}
+
+
+.input-container .user-icon img{
+  width: 4.5vw;
+  padding-right: 15px;
+}
+
+.input-container .e-mail-icon img{
+  width: 4vw;
+  padding-right: 20px
+}
+
+.input-container .password-icon img{
+  width: 4vw;
+  padding-right: 20px
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 90%;
+  padding: 12px 20px;
+  color: #004aad;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  &::placeholder{
+    color: #95c6e3;
+  }
+}
+
+form p{
+  font-size:14pt;
+  color: #38b6ff;
+  align-self: flex-start;
+  &:nth-child(1){
+    text-transform: uppercase;
+  }
+}
+
+.BTNeLink{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+ a{
+   font-size: 12pt;
+   color: #004aad;
+ }
+
+button{
+  width: 230px;
+  height: 56px;
+  font-size: 16pt;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: 2.5px solid #fff;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+form button{
+  border: none;
+  background-color: #017bff;
+}
+
+  .formLogin h1 , .formCadastro h1{
+   font-size: 28pt;
+    text-transform: uppercase;
+    color: #007ad2;
+    font-weight: 600;
+ }
+
+  .formLogin h2 , .formCadastro h2{
+   font-size: 16pt;
+    text-transform: uppercase;
+    color: #6382a6;
+    font-weight: 500;
+ }
+
+ .formContainer h2 , .formContainer h2{
+   font-size: 28pt;
+   text-transform: uppercase;
+   color: #252f76;
+   font-weight: 600;
+ }
+
+.facaCadastro h1, .facaLogin h1{
+  font-size: 32pt;
+  color: #aef3ff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.facaCadastro h2, .facaLogin h2{
+  font-size: 16pt;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.facaLogin .logo img, .facaCadastro .logo img{
+  width: 110px;
+  object-fit: cover;
+}
+
+.facaLogin , .facaCadastro{
+  position: absolute;
+}
+
+
+/*BACKGROUND MÓVEL*/
+.card::after{
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  background: linear-gradient(to bottom, #168cff, #005db2);
+  top: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.card::before{
+  display: none;
+}
+
+/*LOGIN ACTIVE*/
+
+.card.loginActive  .facaLogin{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.loginActive  .facaCadastro{
+  transform: translateX(0);
+  transition: all .5s .3s;
+  opacity: 1;
+}
+
+.card.loginActive .formLogin{
+  transition: all .5s .5s;
+  opacity: 1;
+}
+
+.card.loginActive  .formCadastro{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.loginActive::after{
+  transform: translateX(50%);
+}
+
+ /*CADASTRO ACTIVE*/
+
+.card.cadastroActive   .facaCadastro{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.cadastroActive  .facaLogin{
+  transform: translateX(0);
+  transition: all .5s .3s;
+  opacity: 1;
+}
+
+.card.cadastroActive .formCadastro{
+  transition: all .5s .5s;
+  opacity: 1;
+}
+
+.card.cadastroActive  .formLogin{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.cadastroActive::after{
+  transform: translateX(-50%);
+}
+
+
+/*TRANSITION*/
+
+.card::after{
+  transition: all .8s;
+}
+
+.facaCadastro{
+  transition: all .5s 0;
+  transform: translateX(200%);
+  opacity: 0;
+}
+
+.formLogin{
+  opacity: 0;
+  transition: all .5s 0;
+}
+
+.facaLogin{
+  transition: all .5s 0;
+  transform: translateX(-200%);
+  opacity: 0;
+}
+
+.formCadastro{
+  opacity: 0;
+  transition: all .5s 0;
+}
+
+
+/*Responsividade para TABLET*/
+
+/*OBS: Aqui eu só troquei o tamanho
+dos elementos usando a unidade vw, 
+ela define o tamanho do elemento dependendo
+do tamanho da tela*/
+
+@media (max-width: 1420px){
+  
+  .card{
+    height: 49vw;
+    border-width: 2px;
+    border-radius: 2vw;
+  }
+  
+  .formContainer{
+    border-width: 2px;
+  }
+  
+  .formLogin h1 , .formCadastro h1{
+   font-size: 2.5vw;
+  }
+  
+  .formLogin h2 , .formCadastro h2{
+   font-size: 1.3vw;
+    }
+  
+  .formContainer h2 , .formContainer h2{
+   font-size: 2.2vw;
+   }
+  
+  .facaCadastro h1, .facaLogin h1{
+  font-size: 3.2vw;
+  }
+  
+  .facaCadastro h2, .facaLogin h2{
+  font-size: 1.4vw;
+  }
+  
+  form p{
+    font-size:1.4vw;
+  }
+  
+  .input-container{
+    border-radius: 7px;
+  }
+  
+  input[type="text"] , input[type="password"], input[type="email"] {
+  font-size: 16px;
+  }
+  
+  button{
+    font-size: 16px;
+    width: 170px;
+    height: 40px;
+  }
+  
+   a{
+   font-size: 12px;
+   }
+}
+
+
+/* RESPONSIVIDADE PARA MOBILE/CELULAR */
+@media (max-width: 850px) {
+  .containerPai {
+    height: auto;
+  }
+
+  .card {
+    flex-direction: column;
+    height: auto;
+    min-height: 850px;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .esquerda {
+    width: 100%;
+    height: 30%;
+  }
+  
+  .direita{
+    width: 100%;
+    height: 70%;
+  }
+  
+  .facaLogin, .facaCadastro {
+    position: absolute;
+    top: 0;
+    height: 220px; 
+    width: 100%;
+    z-index: 2;
+    padding: 30px 10px;
+    gap: 10px;
+    transition: transform 0.6s ease, opacity 0.4s;
+  }
+
+  /* Ajuste dos Formulários (baixo) */
+  .formLogin, .formCadastro {
+    position: absolute;
+    top: 210px; 
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
+  }
+
+  .formContainer {
+    width: 360px;
+    padding: 50px 20px;
+  }
+  
+  form{
+    gap: 16px;
+  }
+  
+  .input-container{
+    width: 320px; 
+    height: 50px;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] {
+    font-size: 15px;
+    padding-left: 12px;
+    padding-right: 5px;
+    box-shadow: none;
+    outline: none;
+    user-select: none;
+    
+  }
+  
+  input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+  
+  .input-container .user-icon img{
+    width: 50px;
+    padding-right: 10px;
+    object-fit: contain;
+}
+  
+  .input-container .e-mail-icon img,
+  .input-container .password-icon img{
+    width: 45px;
+    padding-right: 15px;
+  }
+
+  /* BACKGROUND MÓVEL (A parte azul da imagem) */
+  .card::after {
+    display: none;
+  }
+  
+  .card::before{
+    width: 100%;
+    height: 220px;
+    content: "";
+  position: absolute;
+  background: linear-gradient(to bottom, #168cff, #005db2);
+  top: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: block;
+  }
+  
+  .facaLogin .logo img, .facaCadastro .logo img{
+  width: 60px;
+  object-fit: cover;
+    display: none;
+}
+  
+  .formLogin h1 , .formCadastro h1{
+   font-size: 25px;
+  }
+  
+  .formLogin h2 , .formCadastro h2{
+   font-size: 12px;
+    }
+  
+  .formContainer h2 , .formContainer h2{
+   font-size: 28px;
+   }
+  
+  .facaCadastro h1, .facaLogin h1{
+  font-size: 20px;
+  }
+  
+  .facaCadastro h2, .facaLogin h2{
+  font-size: 12px;
+  }
+  
+  form p{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+    button{
+    font-size: 16px;
+    padding: 12px 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-width: 1.5px;
+  }
+
+/* --- ANIMAÇÕES AGRUPADAS --- */
+
+/* LOGIN ATIVO → mostra formLogin + facaCadastro */
+.card.loginActive .formLogin,
+.card.loginActive .facaCadastro {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.card.loginActive .formCadastro,
+.card.loginActive .facaLogin {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* CADASTRO ATIVO → mostra formCadastro + facaLogin */
+.card.cadastroActive .formCadastro,
+.card.cadastroActive .facaLogin {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.card.cadastroActive .formLogin,
+.card.cadastroActive .facaCadastro {
+  opacity: 0;
+  pointer-events: none;
+}
+  
+}
+
+
+
+
+
+
+
+
+

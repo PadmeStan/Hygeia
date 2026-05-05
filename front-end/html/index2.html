@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style4.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/mask.js"></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/email.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>login/cadastro</title>
+</head>
+
+<body>
+<section class="containerPai">
+  <div class="card loginActive">
+
+    <div class="esquerda">
+      <div class="formLogin">
+
+        <h1>Bem vindo de volta!</h1>
+        <h2>insira seus dados para acessar sua conta.</h2>
+
+        <div class="formContainer">
+          <h2>fazer login</h2>
+
+          <!-- LOGIN -->
+          <form action="/login" method="POST">
+
+            <p>cpf</p>
+            <div class="input-container">
+              <input type="text" name="cpf" class="CPF" placeholder="000.000.000-00" maxlength="14" required>
+            </div>
+
+            <p>Senha</p>
+            <div class="input-container">
+              <input type="password" name="senha" placeholder="Digite sua senha" minlength="8" required>
+            </div>
+
+            <div class="BTNeLink">
+              <a href="">esqueceu a senha? clique aqui</a>
+              <button type="submit">entrar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="facaLogin">
+        <div class="logo">
+          <img src="../img/IMG_2/HYGÉIA.png" alt="logo">
+        </div>
+
+        <h1>já possui uma<br>conta?</h1>
+        <h2>Clique abaixo para acessar sua conta existente</h2>
+        <button type="button" class="loginButton">login</button>
+      </div>
+    </div>
+
+    <div class="direita">
+      <div class="formCadastro">
+
+        <h1>bem vindo!</h1>
+        <h2>insira seus dados para criar sua conta.</h2>
+
+        <div class="formContainer">
+          <h2>cadastro</h2>
+
+          <!-- CADASTRO PARTE 1 -->
+          <form id="formCadastro1">
+
+            <p>cpf</p>
+            <div class="input-container">
+              <input type="text" name="cpf" class="CPF" placeholder="000.000.000-00" maxlength="14" required>
+            </div>
+
+            <p>E-mail</p>
+            <div class="input-container">
+              <input type="email" name="email" placeholder="Digite seu E-mail" required>
+            </div>
+
+            <p id="erroCadastro1" class="msg-erro"></p>
+
+            <button type="submit">próximo</button>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="facaCadastro">
+        <div class="logo">
+          <img src="../img/IMG_2/HYGÉIA.png" alt="logo">
+        </div>
+
+        <h1>você é novo<br>por aqui?</h1>
+        <h2>Clique abaixo para iniciar seu cadastro</h2>
+        <button type="button" class="cadastroButton">cadastro</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
