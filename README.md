@@ -8,5 +8,4 @@ O que foi feito na versão 2.0 do Hygeia(na parte de programação):
 
 * A home após login sofreu um atraso no design do canva, o que impossibilitou a codificação. Portanto, o processo após login do usuário será apresentado na próxima versão, e esta contará
   com apenas cadastro funcional.
-* O projeto está organizado em back-end e front-end. O arquivo de banco de dados contém todas as informações sobre o sql. Na parte de back-end > config > db.js deve ser trocada a senha do banco de dados
-  pela da própria máquina. A organização foi pensada a partir do modelo mvc.
+* O projeto está organizado em back-end e front-end. O arquivo de banco de dados(database.sql) contém todas as informações sobre o sql. Na parte de back-end > src > config > db.js deve ser trocada a senha do banco de dados pela da própria máquina. A organização foi pensada a partir do modelo mvc.
