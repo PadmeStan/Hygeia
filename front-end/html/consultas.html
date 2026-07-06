@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/consultas.css">
+<title>Consultas</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo-row">
+      <div class="logo-slot" title="Espaço reservado para a logo">
+        <img src="../img/logo.png" alt="Logo da empresa" class="logo-image">
+      </div>
+      <span class="logo-text">HYGEIA</span>
+      <button class="collapse-btn" aria-label="Recolher menu">
+        <i class="ti ti-chevrons-left" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item"><i class="ti ti-layout-grid" aria-hidden="true"></i><a href="dashboard.html">Home</a></li>
+      <li class="nav-item active"><i class="ti ti-calendar-event" aria-hidden="true"></i><a href="consultas.html">Consultas</a></li>
+      <li class="nav-item"><i class="ti ti-map-pin" aria-hidden="true"></i>Localização</li>
+      <li class="nav-item"><i class="ti ti-users" aria-hidden="true"></i>Membros</li>
+      <li class="nav-item"><i class="ti ti-folder" aria-hidden="true"></i>Dados</li>
+      <li class="nav-item"><i class="ti ti-vaccine" aria-hidden="true"></i>Vacinas</li>
+      <li class="nav-item"><i class="ti ti-help-circle" aria-hidden="true"></i>Ajuda</li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="theme-toggle">
+        <button class="selected" aria-label="Tema claro"><i class="ti ti-sun" aria-hidden="true"></i></button>
+        <button aria-label="Tema escuro"><i class="ti ti-moon" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="user-row">
+        <div class="avatar"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div class="user-info">
+          <div class="user-name">User Name</div>
+          <div class="user-email">Exemplodeemail@gmail.com</div>
+        </div>
+        <i class="ti ti-dots" aria-hidden="true"></i>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 class="page-title">Consultas</h1>
+      <div class="topbar-icons">
+        <button class="icon-btn" aria-label="Notificações"><i class="ti ti-bell" aria-hidden="true"></i></button>
+        <button class="icon-btn" aria-label="Mensagens"><i class="ti ti-mail" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div class="content-placeholder">
+      <div class="consultas">
+
+        <!-- SEÇÃO AGENDAR -->
+        <div class="schedule-card">
+          <h2 class="schedule-title">Agendar</h2>
+
+          <div class="panel-header schedule-tabs-header">
+            <div class="tabs">
+              <button class="tab active">Consultas</button>
+              <button class="tab">Exames</button>
+            </div>
+          </div>
+
+          <div class="specialty-grid">
+            <div class="specialty-item">
+              <div class="specialty-icon bg-1"><i class="fa-solid fa-plus"></i></div>
+              <span class="specialty-label">Clínico Geral</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-2"><i class="fa-solid fa-tooth"></i></div>
+              <span class="specialty-label">Dentista</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-3"><i class="fa-solid fa-apple-whole"></i></div>
+              <span class="specialty-label">Nutricionista</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-4"><i class="fa-solid fa-bone"></i></div>
+              <span class="specialty-label">Ortopedista</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-5"><i class="fa-solid fa-spa"></i></div>
+              <span class="specialty-label">Ginecologista</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-6"><i class="fa-solid fa-user-nurse"></i></div>
+              <span class="specialty-label">Obstetra</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-7"><i class="fa-solid fa-hand-dots"></i></div>
+              <span class="specialty-label">Dermatologista</span>
+            </div>
+
+            <div class="specialty-item">
+              <div class="specialty-icon bg-8"><i class="fa-solid fa-baby"></i></div>
+              <span class="specialty-label">Pediatra</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-9"><i class="fa-solid fa-person-cane"></i></div>
+              <span class="specialty-label">Geriatra</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-10"><i class="fa-solid fa-mars"></i></div>
+              <span class="specialty-label">Urologista</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-11"><i class="fa-solid fa-lungs"></i></div>
+              <span class="specialty-label">Pneumologista</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-12"><i class="fa-solid fa-ear-listen"></i></div>
+              <span class="specialty-label">Otorrino</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-13"><i class="fa-solid fa-brain"></i></div>
+              <span class="specialty-label">Psicólogo</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-icon bg-14"><i class="fa-solid fa-comment-medical"></i></div>
+              <span class="specialty-label">Psiquiatra</span>
+            </div>
+          </div>
+
+          <div class="schedule-btn-row">
+            <button class="btn-detalhar">Detalhar</button>
+          </div>
+        </div>
+
+        <!-- PAINEL DE CONSULTAS (TABELA) -->
+        <div class="panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Situação</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nome">Sophia Johnson da Silva Pereira</td>
+                <td>Dermatologista</td>
+                <td>25/12</td>
+                <td>14:00</td>
+                <td><span class="situacao agendada"><span class="dot agendada"></span>Agendada</span></td>
+                <td><button class="btn-detalhar small">Detalhar</button></td>
+              </tr>
+              <tr>
+                <td class="nome">Stella Johnson Pereira</td>
+                <td>Clínico geral</td>
+                <td>25/12</td>
+                <td>08:00</td>
+                <td><span class="situacao processo"><span class="dot processo"></span>Em processo</span></td>
+                <td><button class="btn-detalhar small">Detalhar</button></td>
+              </tr>
+              <tr>
+                <td class="nome">Joseph Johnson da Silva</td>
+                <td>Dentista</td>
+                <td>25/12</td>
+                <td>14:00</td>
+                <td><span class="situacao processo"><span class="dot processo"></span>Em processo</span></td>
+                <td><button class="btn-detalhar small">Detalhar</button></td>
+              </tr>
+              <tr>
+                <td class="nome">Daniel Turner S. A. Rocha</td>
+                <td>Pediatra</td>
+                <td>25/12</td>
+                <td>09:00</td>
+                <td><span class="situacao cancelada"><span class="dot cancelada"></span>Cancelada</span></td>
+                <td><button class="btn-detalhar small">Detalhar</button></td>
+              </tr>
+              <tr>
+                <td class="nome">Sophia Johnson da Silva Pereira</td>
+                <td>Clínico geral</td>
+                <td>--</td>
+                <td>--</td>
+                <td><span class="situacao pendente"><span class="dot pendente"></span>Pendente</span></td>
+                <td><button class="btn-detalhar small">Detalhar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/styleboard.css">
+<title>Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo-row">
+      <div class="logo-slot" title="Espaço reservado para a logo">
+        <img src="../img/logo.png" alt="Logo da empresa" class="logo-image">
+        
+      </div>
+      <span class="logo-text">HYGEIA</span>
+      <button class="collapse-btn" aria-label="Recolher menu">
+        <i class="ti ti-chevrons-left" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item active"><i class="ti ti-layout-grid" aria-hidden="true"></i> <a href="dashboard.html">Home</a></li>
+      <li class="nav-item"><i class="ti ti-calendar-event" aria-hidden="true"></i><a href="consultas.html">Consultas</a></li>
+      <li class="nav-item"><i class="ti ti-map-pin" aria-hidden="true"></i>Localização</li>
+      <li class="nav-item"><i class="ti ti-users" aria-hidden="true"></i>Membros</li>
+      <li class="nav-item"><i class="ti ti-folder" aria-hidden="true"></i>Dados</li>
+      <li class="nav-item"><i class="ti ti-vaccine" aria-hidden="true"></i>Vacinas</li>
+      <li class="nav-item"><i class="ti ti-help-circle" aria-hidden="true"></i>Ajuda</li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="theme-toggle">
+        <button class="selected" aria-label="Tema claro"><i class="ti ti-sun" aria-hidden="true"></i></button>
+        <button aria-label="Tema escuro"><i class="ti ti-moon" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="user-row">
+        <div class="avatar"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div class="user-info">
+          <div class="user-name">User Name</div>
+          <div class="user-email">Exemplodeemail@gmail.com</div>
+        </div>
+        <i class="ti ti-dots" aria-hidden="true"></i>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="icon-btn" aria-label="Notificações"><i class="ti ti-bell" aria-hidden="true"></i></button>
+      <button class="icon-btn" aria-label="Mensagens"><i class="ti ti-mail" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="content-placeholder">
+
+      <div class="left-column">
+
+        <div class="carousel" id="carousel">
+          <div class="carousel-track" id="track">
+            <div class="slide"><div class="placeholder"><i class="ti ti-photo" aria-hidden="true"></i></div></div>
+            <div class="slide"><div class="placeholder"><i class="ti ti-photo" aria-hidden="true"></i></div></div>
+            <div class="slide"><div class="placeholder"><i class="ti ti-photo" aria-hidden="true"></i></div></div>
+          </div>
+
+          <button class="carousel-arrow prev" aria-label="Anterior">
+            <i class="ti ti-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-arrow next" aria-label="Próximo">
+            <i class="ti ti-chevron-right" aria-hidden="true"></i>
+          </button>
+
+          <div class="carousel-dots" id="dots"></div>
+        </div>
+
+        <div class="container">
+
+          <div class="card members">
+            <div class="top">
+              <h2 class="title">Membros</h2>
+              <div class="plus"><i class="fa-solid fa-plus"></i></div>
+            </div>
+
+            <div class="member-grid">
+              <div class="member">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Alex<br>Johnson</div>
+              </div>
+              <div class="member">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Karol<br>Johnson</div>
+              </div>
+              <div class="member">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Daniel<br>Turner</div>
+              </div>
+              <div class="member">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Sophia<br>Johnson</div>
+              </div>
+              <div class="member">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Stella<br>Johnson</div>
+              </div>
+              <div class="member">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Joseph<br>Johnson</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card pending">
+            <div class="top">
+              <h2 class="title">Falta Marcar</h2>
+              <div class="plus"><i class="fa-solid fa-plus"></i></div>
+            </div>
+
+            <div class="pending-section">
+              <h3 class="subtitle">Encaminhamentos</h3>
+              <div class="pending-list">
+                <div class="pending-item"><span>ultrassonografia abdominal</span><span class="dots">...</span></div>
+                <div class="pending-item"><span>ultrassonografia abdominal</span><span class="dots">...</span></div>
+                <div class="pending-item"><span>ultrassonografia abdominal</span><span class="dots">...</span></div>
+              </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="pending-section">
+              <h3 class="subtitle">Exames</h3>
+              <div class="pending-list">
+                <div class="pending-item"><span>ressonância magnética</span><span class="dots">...</span></div>
+                <div class="pending-item"><span>ultrassonografia abdominal</span><span class="dots">...</span></div>
+                <div class="pending-item"><span>ultrassonografia transvaginal</span><span class="dots">...</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card alerts">
+            <div class="alert-header">
+              <div class="alert-title">Avisos</div>
+              <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            </div>
+
+            <div class="alert-item">
+              <div class="number">1</div>
+              <div class="alert-text">vacinas disponíveis nas UBS de Ribamar</div>
+            </div>
+
+            <div class="alert-item">
+              <div class="number">2</div>
+              <div class="alert-text">Atendimentos da UBS do Pindaí foram transferidas para Ribamar.</div>
+            </div>
+          </div>
+
+        </div><!-- fecha .container -->
+
+        <div class="consultas">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="tabs">
+                <button class="tab active">Consultas</button>
+                <button class="tab">Exames</button>
+              </div>
+              <button class="btn-detalhar">Detalhar</button>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Tipo</th>
+                  <th>Data</th>
+                  <th>Horário</th>
+                  <th>Situação</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="nome">Sophia Johnson da Silva Pereira</td>
+                  <td>Dermatologista</td>
+                  <td>25/12</td>
+                  <td>14:00</td>
+                  <td><span class="situacao agendada"><span class="dot agendada"></span>Agendada</span></td>
+                  <td><button class="btn-detalhar small">Detalhar</button></td>
+                </tr>
+                <tr>
+                  <td class="nome">Stella Johnson Pereira</td>
+                  <td>Clínico geral</td>
+                  <td>25/12</td>
+                  <td>08:00</td>
+                  <td><span class="situacao processo"><span class="dot processo"></span>Em processo</span></td>
+                  <td><button class="btn-detalhar small">Detalhar</button></td>
+                </tr>
+                <tr>
+                  <td class="nome">Joseph Johnson da Silva</td>
+                  <td>Dentista</td>
+                  <td>25/12</td>
+                  <td>14:00</td>
+                  <td><span class="situacao processo"><span class="dot processo"></span>Em processo</span></td>
+                  <td><button class="btn-detalhar small">Detalhar</button></td>
+                </tr>
+                <tr>
+                  <td class="nome">Daniel Turner S. A. Rocha</td>
+                  <td>Pediatra</td>
+                  <td>25/12</td>
+                  <td>09:00</td>
+                  <td><span class="situacao cancelada"><span class="dot cancelada"></span>Cancelada</span></td>
+                  <td><button class="btn-detalhar small">Detalhar</button></td>
+                </tr>
+                <tr>
+                  <td class="nome">Sophia Johnson da Silva Pereira</td>
+                  <td>Clínico geral</td>
+                  <td>--</td>
+                  <td>--</td>
+                  <td><span class="situacao pendente"><span class="dot pendente"></span>Pendente</span></td>
+                  <td><button class="btn-detalhar small">Detalhar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div><!-- fecha .left-column -->
+
+      <div class="right-column">
+
+        <div class="card next-appointment">
+          <h3 class="section-title-inside">PRÓXIMA CONSULTA</h3>
+          <div class="doctor-info">
+            <div class="doctor-avatar">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <div class="doctor-details">
+              <h4>DERMATOLOGISTA</h4>
+              <p class="doctor-name">Dra. Sarah Meireles</p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> UBS DO PINDAÍ - Pindaí, Paço do Lumiar - MA, 65060-000</p>
+            </div>
+          </div>
+
+          <div class="appointment-meta">
+            <div class="meta-item">
+              <span>prioridade</span>
+              <strong>NORMAL</strong>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span>Tipo de Consulta</span>
+              <strong>RETORNO</strong>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span>Data e Horário</span>
+              <strong>25/12 às 14:00 h</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-section">
+          <h3 class="section-title-outside">AGENDA</h3>
+          <div class="calendar-card">
+            <div class="calendar-header">
+              <span class="month">FERVEREIRO</span>
+              <span class="year">2026</span>
+            </div>
+            <div class="days-row">
+              <div class="day-item"><span>DOM</span><strong>15</strong></div>
+              <div class="day-item active"><span>SEG</span><strong>16</strong></div>
+              <div class="day-item"><span>TER</span><strong>17</strong></div>
+              <div class="day-item"><span>QUA</span><strong>18</strong></div>
+              <div class="day-item"><span>QUI</span><strong>19</strong></div>
+              <div class="day-item"><span>SEX</span><strong>20</strong></div>
+              <div class="day-item"><span>SÁB</span><strong>21</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-section">
+          <h3 class="section-title-outside">UBS PRÓXIMAS</h3>
+          <div class="map-card">
+            <div class="map-placeholder">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>[Mapa da Região]</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- fecha .right-column -->
+
+    </div><!-- fecha .content-placeholder -->
+
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
