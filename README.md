@@ -18,5 +18,5 @@ ALTERAÇÕES DA SEGUNDA ETAPA:
 - Criação da home de usuário estática(apenas html e css);
 - Criação da página de consultas estática(apenas html e css);
 - Adição de código sql inserindo todas ubs no banco de dados em database.sql na pasta de back-end(para uso nas etapas posteriores);
-- Criação da página de membros;
-- Criação da página de perfil;
+- Criação da página de membros(html e css);
+- Criação da página de perfil(html e css);
