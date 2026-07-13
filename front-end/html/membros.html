@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/membros.css">
+<title>Membros</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo-row">
+      <div class="logo-slot" title="Espaço reservado para a logo">
+        <img src="../img/logo.png" alt="Logo da empresa" class="logo-image">
+      </div>
+      <span class="logo-text">HYGEIA</span>
+      <button class="collapse-btn" aria-label="Recolher menu">
+        <i class="ti ti-chevrons-left" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item"><i class="ti ti-layout-grid" aria-hidden="true"></i><a href="dashboard.html">Home</a></li>
+      <li class="nav-item"><i class="ti ti-calendar-event" aria-hidden="true"></i><a href="consultas.html">Consultas</a></li>
+      <li class="nav-item"><i class="ti ti-map-pin" aria-hidden="true"></i><a href="#">Localização</a></li>
+      <li class="nav-item active"><i class="ti ti-users" aria-hidden="true"></i><a href="membros.html">Membros</a></li>
+      <li class="nav-item"><i class="ti ti-folder" aria-hidden="true"></i><a href="#">Dados</a></li>
+      <li class="nav-item"><i class="ti ti-vaccine" aria-hidden="true"></i><a href="#">Vacinas</a></li>
+      <li class="nav-item"><i class="ti ti-help-circle" aria-hidden="true"></i><a href="#">Ajuda</a></li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="theme-toggle">
+        <button class="selected" aria-label="Tema claro"><i class="ti ti-sun" aria-hidden="true"></i></button>
+        <button aria-label="Tema escuro"><i class="ti ti-moon" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="user-row">
+        <div class="avatar-mini"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div class="user-info">
+          <div class="user-name"><a href="perfil.html">User Name</a></div>
+          <div class="user-email">Exemplodeemail@gmail.com</div>
+        </div>
+        <i class="ti ti-dots" aria-hidden="true"></i>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 class="page-title">Membros</h1>
+      <div class="topbar-icons">
+        <button class="icon-btn" aria-label="Notificações"><i class="ti ti-bell" aria-hidden="true"></i></button>
+        <button class="icon-btn" aria-label="Mensagens"><i class="ti ti-mail" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div class="content-placeholder">
+      <div class="membros">
+
+        <!-- MEMBRO 1 -->
+        <div class="card"
+            data-foto="../img/stella.png"
+            data-nome="Stella Johnson"
+            data-data="10/03/1992"
+            data-idade="33 anos"
+            data-genero="Feminino"
+            data-cpf="000.000.000-00"
+            data-sus="000 0000 0000 0000"
+            data-tipo="Titular">
+
+            <button class="menu-pontos" title="Mais opções">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+            </button>
+
+            <div class="avatar">
+                <div class="avatar-padrao"></div>
+                <span class="camera">
+                    <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                </span>
+            </div>
+
+            <h3>Stella Johnson</h3>
+
+            <span class="selo selo-titular">Titular</span>
+
+        </div>
+
+        <!-- MEMBRO 2 -->
+        <div class="card"
+            data-foto="../img/joseph.png"
+            data-nome="Joseph Johnson"
+            data-data="21/07/1990"
+            data-idade="35 anos"
+            data-genero="Masculino"
+            data-cpf="111.222.333-44"
+            data-sus="1111 2222 3333 4444"
+            data-tipo="Membro">
+
+            <button class="menu-pontos" title="Mais opções">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+            </button>
+
+            <div class="avatar">
+                <div class="avatar-padrao"></div>
+                <span class="camera">
+                    <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                </span>
+            </div>
+
+            <h3>Joseph Johnson</h3>
+
+            <span class="selo">Membro</span>
+
+        </div>
+
+        <!-- MEMBRO 3 -->
+        <div class="card"
+            data-foto="../img/thomas.png"
+            data-nome="Thomas Johnson"
+            data-data="05/01/1988"
+            data-idade="37 anos"
+            data-genero="Masculino"
+            data-cpf="222.333.444-55"
+            data-sus="2222 3333 4444 5555"
+            data-tipo="Membro">
+
+            <button class="menu-pontos" title="Mais opções">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+            </button>
+
+            <div class="avatar">
+                <div class="avatar-padrao"></div>
+                <span class="camera">
+                    <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                </span>
+            </div>
+
+            <h3>Thomas Johnson</h3>
+
+            <span class="selo">Membro</span>
+
+        </div>
+
+        <!-- MEMBRO 4 -->
+        <div class="card"
+            data-foto="../img/karol.png"
+            data-nome="Karol Johnson"
+            data-data="14/09/1995"
+            data-idade="30 anos"
+            data-genero="Feminino"
+            data-cpf="333.444.555-66"
+            data-sus="3333 4444 5555 6666"
+            data-tipo="Membro">
+
+            <button class="menu-pontos" title="Mais opções">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+            </button>
+
+            <div class="avatar">
+                <div class="avatar-padrao"></div>
+                <span class="camera">
+                    <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                </span>
+            </div>
+
+            <h3>Karol Johnson</h3>
+
+            <span class="selo">Membro</span>
+
+        </div>
+
+        <!-- MEMBRO 5 -->
+        <div class="card"
+            data-foto="../img/sophia.png"
+            data-nome="Sophia Johnson"
+            data-data="02/05/2005"
+            data-idade="20 anos"
+            data-genero="Feminino"
+            data-cpf="987.654.321-00"
+            data-sus="9876 5432 1010 2222"
+            data-tipo="Membro">
+
+            <button class="menu-pontos" title="Mais opções">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+            </button>
+
+            <div class="avatar">
+                <div class="avatar-padrao"></div>
+                <span class="camera">
+                    <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                </span>
+            </div>
+
+            <h3>Sophia Johnson</h3>
+
+            <span class="selo">Membro</span>
+
+        </div>
+
+        <!-- MEMBRO 6 -->
+        <div class="card"
+            data-foto="../img/daniel.png"
+            data-nome="Daniel Thuner"
+            data-data="17/10/2001"
+            data-idade="25 anos"
+            data-genero="Masculino"
+            data-cpf="123.456.789-10"
+            data-sus="1234 5678 8910 1112"
+            data-tipo="Membro">
+
+            <button class="menu-pontos" title="Mais opções">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+            </button>
+
+            <div class="avatar">
+                <div class="avatar-padrao"></div>
+                <span class="camera">
+                    <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                </span>
+            </div>
+
+            <h3>Daniel Thuner</h3>
+
+            <span class="selo">Membro</span>
+
+        </div>
+
+        <!-- ADICIONAR MEMBRO -->
+        <div class="card adicionar" id="btnAdicionar">
+            <span class="mais">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+            <p>Adicionar<br>membro</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+
+      <div class="janela">
+
+          <span class="fechar" id="fechar">&times;</span>
+
+          <span class="selo-modal" id="seloModal">Membro</span>
+
+          <div class="moldura">
+
+              <div class="esquerda">
+
+                  <div class="avatar avatar-modal">
+                      <div class="avatar-padrao" id="foto"></div>
+                      <span class="camera">
+                          <svg viewBox="0 0 24 24"><path d="M9 3 7.6 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.6L15 3H9Zm3 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+                      </span>
+                  </div>
+
+                  <h2 id="nome"></h2>
+
+              </div>
+
+              <div class="direita">
+
+                  <div class="campo campo-largo">
+                      <label>Nome</label>
+                      <input id="nomeInput" readonly>
+                  </div>
+
+                  <div class="linha">
+
+                      <div class="campo">
+                          <label>Data de nascimento</label>
+                          <input id="nascimento" readonly>
+                      </div>
+
+                      <div class="campo">
+                          <label>Idade</label>
+                          <input id="idade" readonly>
+                      </div>
+
+                      <div class="campo">
+                          <label>Gênero</label>
+                          <input id="genero" readonly>
+                      </div>
+
+                  </div>
+
+                  <div class="linha">
+
+                      <div class="campo">
+                          <label>CPF</label>
+                          <input id="cpf" readonly>
+                      </div>
+
+                      <div class="campo">
+                          <label>Cartão do SUS</label>
+                          <input id="sus" readonly>
+                      </div>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+          <div class="botoes">
+
+              <button class="excluir">Excluir</button>
+
+              <button class="editar">Editar</button>
+
+          </div>
+
+      </div>
+
+  </div>
+
+  <script src="../js/membros.js"></script>
+
+</body>
+</html>

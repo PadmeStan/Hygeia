@@ -29,7 +29,7 @@
   }
 
 
-  /* ============ SIDEBAR ============ */
+  /* SIDEBAR  */
   .sidebar{
     width:var(--sidebar-width);
     min-height:100vh;
@@ -132,7 +132,7 @@
     transition:background .15s ease;
   }
 
-  .nav-item a{
+  a{
     color: inherit;
     text-decoration: none;
     font: inherit;
@@ -210,7 +210,7 @@
   }
   .user-row i.ti-dots{font-size:16px; color:var(--text-muted-on-blue); cursor:pointer;}
 
-  /* ============ MAIN AREA ============ */
+  /* MAIN AREA */
   .main{
     flex:1;
     display:flex;
@@ -267,7 +267,7 @@
     font-family:'Segoe UI', Arial, sans-serif;
   }
 
-  /* ============ CARROSSEL ============ */
+  /* CARROSSEL  */
   .carousel{
     position:relative;
     width:100%;
@@ -360,7 +360,7 @@
     border-radius:3px;
   }
 
-  /* ============ PAINEL CONSULTAS/EXAMES ============ */
+  /* PAINEL CONSULTAS/EXAMES */
   .panel{
     width:100%;
     background:#fff;
@@ -423,7 +423,7 @@
     font-size:9px;
   }
 
-  /* ============ TABELA ============ */
+  /* TABELA */
   table{
     width:100%;
     border-collapse:collapse;
@@ -503,9 +503,9 @@
     0 4px 10px rgba(0,0,0,0.03);
   }
 
-  /* ========================= */
+  
   /* MEMBROS */
-  /* ========================= */
+  
   .members{
     flex:1;
     min-width:0;
@@ -597,9 +597,9 @@
     line-height: 1.2;
   }
 
-  /* ========================= */
+  
   /* FALTA MARCAR */
-  /* ========================= */
+  
   .pending{
     flex:1;
     min-width:0;
@@ -642,9 +642,9 @@
     opacity: 0.4;
   }
 
-  /* ========================= */
+  
   /* AVISOS */
-  /* ========================= */
+ 
   .alerts{
     width:160px;
     flex-shrink:0;
@@ -703,9 +703,9 @@
     font-weight:500;
   }
 
-  /* ========================= */
+  
   /* COLUNA DA DIREITA         */
-  /* ========================= */
+  
   .right-column {
     width: 280px;
     background: #0057b8;
