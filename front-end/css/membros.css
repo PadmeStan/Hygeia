@@ -530,6 +530,23 @@
     font-size:15px;
   }
 
+  .campo select{
+    width:100%;
+    min-width:0;
+    padding:12px 14px;
+    border:1px solid #3399ff;
+    border-radius:8px;
+    background:#fff;
+    color:#333;
+    font-size:15px;
+    font-family:inherit;
+    cursor:pointer;
+  }
+
+  .campo input::placeholder{
+    color:#9fb3cc;
+  }
+
   .botoes{
     display:flex;
     justify-content:flex-end;
