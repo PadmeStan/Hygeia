@@ -67,3 +67,115 @@ INSERT INTO ubs (nome) VALUES
 ('Unidade básica de saúde do j camara'),
 ('Unidade básica de saúde dr Honório Ferreira Gomes'),
 ('Unidade básica de saúde vila kiola');
+
+-- MEMBROS--
+
+CREATE TABLE IF NOT EXISTS membros_familia (
+  id              INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id      INT NOT NULL,
+  nome            VARCHAR(255) NOT NULL,
+  data_nascimento DATE,
+  genero          ENUM('Feminino','Masculino','Outro'),
+  cpf             VARCHAR(11),
+  sus             VARCHAR(15),
+  tipo            ENUM('Titular','Membro') DEFAULT 'Membro',
+  criado_em       DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+-- AGENDAMENTO DE CONSULTAS --
+
+-- Especialidades médicas
+CREATE TABLE IF NOT EXISTS especialidades (
+  id    INT AUTO_INCREMENT PRIMARY KEY,
+  nome  VARCHAR(100) NOT NULL,
+  icone VARCHAR(50)
+);
+
+INSERT INTO especialidades (nome, icone) VALUES
+('Clínico Geral',    'fa-plus'),
+('Dentista',         'fa-tooth'),
+('Nutricionista',    'fa-apple-whole'),
+('Ortopedista',      'fa-bone'),
+('Ginecologista',    'fa-spa'),
+('Obstetra',         'fa-user-nurse'),
+('Dermatologista',   'fa-hand-dots'),
+('Pediatra',         'fa-baby'),
+('Geriatra',         'fa-person-cane'),
+('Urologista',       'fa-mars'),
+('Pneumologista',    'fa-lungs'),
+('Otorrino',         'fa-ear-listen'),
+('Psicólogo',        'fa-brain'),
+('Psiquiatra',       'fa-comment-medical');
+
+-- Adiciona colunas na tabela ubs para endereço e funcionamento
+ALTER TABLE ubs
+  ADD COLUMN endereco      VARCHAR(255) DEFAULT NULL,
+  ADD COLUMN funcionamento VARCHAR(100) DEFAULT 'Seg a Sex, 08h-17h',
+  ADD COLUMN latitude      DECIMAL(10,7) DEFAULT NULL,
+  ADD COLUMN longitude     DECIMAL(10,7) DEFAULT NULL;
+
+-- UBS fictícia para testes (id 1 = São José dos Índios, já existe)
+UPDATE ubs SET
+  endereco     = 'Vila São José, São José de Ribamar - MA, 65110-000',
+  funcionamento = 'Seg a Sex, 07h–16h',
+  latitude     = -2.5501,
+  longitude    = -44.0581
+WHERE id = 1;
+
+UPDATE ubs SET
+  endereco     = 'Parque Aracagy, São José de Ribamar - MA, 65110-000',
+  funcionamento = 'Seg a Sex, 08h–17h'
+WHERE id = 2;
+
+UPDATE ubs SET
+  endereco     = 'R. J.k - Mata, São José de Ribamar - MA, 65110-000',
+  funcionamento = 'Seg a Sex, 08h–17h'
+WHERE id = 13; -- pindaí
+
+UPDATE ubs SET
+  endereco     = 'Res. Turiúba, São José de Ribamar - MA, 65110-000',
+  funcionamento = 'Seg a Sáb, 07h–15h'
+WHERE id = 4;
+
+-- Quais especialidades cada UBS atende
+CREATE TABLE IF NOT EXISTS ubs_especialidades (
+  ubs_id          INT NOT NULL,
+  especialidade_id INT NOT NULL,
+  PRIMARY KEY (ubs_id, especialidade_id),
+  FOREIGN KEY (ubs_id)          REFERENCES ubs(id)           ON DELETE CASCADE,
+  FOREIGN KEY (especialidade_id) REFERENCES especialidades(id) ON DELETE CASCADE
+);
+
+-- Para teste: todas as especialidades nas 4 primeiras UBS
+INSERT IGNORE INTO ubs_especialidades (ubs_id, especialidade_id)
+SELECT u.id, e.id FROM ubs u, especialidades e WHERE u.id IN (1,2,4,13);
+
+-- Horários disponíveis (gerados automaticamente para teste)
+CREATE TABLE IF NOT EXISTS horarios (
+  id               INT AUTO_INCREMENT PRIMARY KEY,
+  ubs_id           INT NOT NULL,
+  especialidade_id INT NOT NULL,
+  data             DATE NOT NULL,
+  hora             TIME NOT NULL,
+  disponivel       BOOLEAN DEFAULT TRUE,
+  FOREIGN KEY (ubs_id)          REFERENCES ubs(id)           ON DELETE CASCADE,
+  FOREIGN KEY (especialidade_id) REFERENCES especialidades(id) ON DELETE CASCADE
+);
+
+-- Consultas agendadas
+CREATE TABLE IF NOT EXISTS consultas (
+  id               INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id       INT NOT NULL,
+  membro_id        INT,
+  ubs_id           INT NOT NULL,
+  especialidade_id INT NOT NULL,
+  data             DATE NOT NULL,
+  hora             TIME NOT NULL,
+  status           ENUM('agendada','cancelada','concluida') DEFAULT 'agendada',
+  criado_em        DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id)       REFERENCES usuarios(id)          ON DELETE CASCADE,
+  FOREIGN KEY (membro_id)        REFERENCES membros_familia(id)   ON DELETE SET NULL,
+  FOREIGN KEY (ubs_id)           REFERENCES ubs(id),
+  FOREIGN KEY (especialidade_id) REFERENCES especialidades(id)
+);

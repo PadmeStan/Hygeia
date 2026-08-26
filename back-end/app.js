@@ -3,43 +3,43 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 
-const authRoutes = require('./src/routes/authRoutes');
+const authRoutes   = require('./src/routes/authRoutes');
+const membroRoutes = require('./src/routes/membroRoutes');
+const consultaRoutes = require('./src/routes/consultaRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ── ARQUIVOS ESTÁTICOS DO FRONTEND ──────────────────────────────────────────
-// backend/ e frontend/ são irmãs, então subimos um nível com ../
-const frontendPath = path.join(__dirname, '..', 'front-end');
-
-app.use(express.static(frontendPath));          // serve css/, js/, img/
-app.use(express.static(path.join(frontendPath, 'html'))); // serve os .html diretamente
-
-// ── ROTA RAIZ → index2.html ──────────────────────────────────────────────────
-app.get('/', (req, res) => {
-  res.sendFile(path.join(frontendPath, 'html', 'index2.html'));
-});
-
-// ── BODY PARSERS ─────────────────────────────────────────────────────────────
+// ── BODY PARSERS — sempre primeiro ───────────────────
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ── SESSÃO ───────────────────────────────────────────────────────────────────
+// ── SESSÃO ───────────────────────────────────────────
 app.use(session({
   secret: process.env.SESSION_SECRET || 'hygeia_secret',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false,                 // true em HTTPS
-    maxAge: 1000 * 60 * 60 * 2,   // 2 horas
+    secure: false,
+    maxAge: 1000 * 60 * 60 * 2,
   },
 }));
 
-// ── ROTAS DA API ─────────────────────────────────────────────────────────────
+// ── ROTAS DA API ─────────────────────────────────────
 app.use('/api', authRoutes);
+app.use('/api/membros', membroRoutes);
+app.use('/api/consultas', consultaRoutes);
 
-// ── INICIA SERVIDOR ──────────────────────────────────────────────────────────
+// ── ARQUIVOS ESTÁTICOS ────────────────────────────────
+const frontendPath = path.join(__dirname, '..', 'front-end');
+app.use(express.static(frontendPath));
+app.use(express.static(path.join(frontendPath, 'html')));
+
+// ── ROTA RAIZ ─────────────────────────────────────────
+app.get('/', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'html', 'index2.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando em http://localhost:${PORT}`);
-  console.log(`   Acesse: http://localhost:${PORT}/`);
 });
