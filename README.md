@@ -16,7 +16,7 @@ A entrega das tarefas de design estão na pasta de documentação, onde todos os
 ALTERAÇÕES DA SEGUNDA ETAPA:
 
 - Criação da home de usuário estática (apenas html e css);
-- Criação da página de consultas estática;
+- Criação da página de consultas;
 - Adição de código sql para inserir dados das ubs, membros e consultas no banco de dados;
 - Criação da página de membros;
 - Criação da página de perfil(html e css);
