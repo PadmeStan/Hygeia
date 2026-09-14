@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --blue1: #0b7df0;
+    --blue2: #0f5be6;
+    --light-gray: #f4f7fb;
+    --card-border: rgba(15, 92, 230, 0.2);
+    --text-dark: #0f2130;
+
+    --input-text: #38b6ff;
+    --input-border: #004aad;
+    --input-bg: #ffffff;
+}
+
+body {
+    background: var(--light-gray);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    height: 520px;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(10, 20, 40, 0.12);
+}
+
+/* LEFT PANEL */
+.left-panel {
+    flex: 1;
+    padding: 48px 36px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    background: linear-gradient(128deg, #0ca3ff 0%, #0b7df0 40%, #0f5be6 100%);
+}
+
+/* LOGO — sem caixa(eu particulamente prefiria com a caixa) */
+.logo-img {
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Títulos Montserrat quase n consigo colocar AKAKAKKAKA*/
+.left-title {
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.welcome {
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: var(--text-dark);
+    font-family: Montserrat;
+    font-weight: 300;
+}
+
+.brand {
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 14px;
+    color: var(--text-dark);
+}
+
+/* Texto menor */
+.left-sub {
+    opacity: .95;
+    font-size: 13px;
+    font-weight: 700 ;
+}
+
+/* BOTÃO CADASTRO — preto com borda branca (eu achei feio mas ricardo quis assim *figurinha do cachoro revirando os olhos* */
+.btn-cadastro {
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    flex: 1;
+    padding: 36px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.98));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FORM CARD */
+.card {
+    width: 82%;
+    max-width: 360px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 6px 18px rgba(40, 60, 90, 0.04);
+}
+
+.login-form {
+    display: grid;
+    gap: 12px;
+}
+
+/* LABELS */
+.label-text {
+    font-size: 12px;
+    color: var(--input-text);
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* INPUT ROW */
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--input-border);
+    background: var(--input-bg);
+}
+
+/* TEXTO DO INPUT */
+.input-row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: var(--input-text);
+    background: transparent;
+}
+
+/* PLACEHOLDER */
+.input-row input::placeholder {
+    color: var(--input-text);
+    opacity: 1;
+}
+
+/* ÍCONE DO USUÁRIO — PRETO */
+.input-row svg.icon:first-of-type {
+    color: #000 !important;
+}
+
+/* ÍCONES — azul */
+.icon {
+    color: var(--input-text) !important;
+    opacity: 1;
+}
+
+.eye-btn svg {
+    color: var(--input-text) !important;
+}
+
+/* BOTÃO DO OLHO que abre de frente e fecha de lado kkkkk */
+.eye-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+    position: relative;
+}
+
+/* Animação olho deficiente ;(*/
+.eye-open {
+    opacity: 1;
+    transition: 0.25s;
+}
+
+.eye-closed {
+    opacity: 0;
+    position: absolute;
+    transition: 0.25s;
+}
+
+#togglePass.active .eye-open {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+#togglePass.active .eye-closed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* BOTÃO ENTRAR — Ricardo queria assim *figurinha do cachoro virando os olhos* */
+.btn-enter {
+    display: inline-block;   /* Faz <a> virar um botão */
+    text-align: center;      /* Centraliza o texto */
+    text-decoration: none;   /* Remove o sublinhado */
+
+    width: 75%;
+    padding: 12px 14px;
+    margin: 12px auto 0;
+    border-radius: 25px;
+    font-weight: 700;
+
+    color: white;
+    background: linear-gradient(90deg, var(--blue1), var(--blue2));
+    box-shadow: 0 4px 12px rgba(11, 125, 240, 0.20);
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-enter:hover {
+    transform: scale(1.02);
+}
+
+
+
+/* LINK AJUDA */
+.help {
+    font-size: 12px;
+    text-align: right;
+}
+
+.help a {
+    color: #5b7aa0;
+    text-decoration: none;
+}
+
+/* Impede o CPF de esticar o campo */
+#cpfInput {
+    width: 100%;
+    letter-spacing: 0.5px;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .container {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .left-panel,
+    .right-panel {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .card {
+        width: 94%;
+        margin: 18px auto;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .left-title {
+        font-size: 18px;
+    }
+
+    .left-sub {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .left-title {
+        font-size: 16px;
+    }
+
+    .left-sub {
+        font-size: 11px;
+    }
+
+    .logo-img {
+        width: 90px;
+    }
+}

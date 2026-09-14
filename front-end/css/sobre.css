@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e8eef7;
+    overflow-x: hidden;
+}
+
+/*barra de navegação*/
+.nave {
+    font-family: "Open Sans", sans-serif;
+    background-color: #168bff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    height: 90px;
+    max-width: 90px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 400;
+}
+
+.nav-item :hover {
+    color: #e3f0ff;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login button {
+    background-color: #168bff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin: 0 15px;
+
+}
+
+.login button:hover {
+    background-color: #2286e9;
+
+}
+
+.login .blista {
+   background-color: #0e63c9;
+}
+
+.login button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.login button a:hover {
+    color: #e3f0ff;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+/*barra de pesquisa*/
+
+.search-container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 1px 80px; 
+    box-sizing: border-box;
+}
+
+.search-container form {
+    display: flex;           /* deixa input e botão lado a lado */
+    width: 100%;
+    align-items: stretch;
+}
+
+.search-container input[type=text] {
+    flex: 1;                 /* ocupa todo o espaço disponível */
+    padding: 12px;
+    font-size: 17px;
+    border: 2px solid #168bff;
+    border-right: none;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #1b70cc;
+    font-size: 17px;
+    border: 2px solid #168bff;
+    cursor: pointer;
+    border-left: none; 
+    margin: 0;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container button:hover {
+    background: #165ca7;
+}
+
+i {
+    color: white; /* o icone da barra*/
+}
+
+.boxtitle {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.about_title {
+    margin-top: 8%;
+    width:40%;
+    font-size: 2.5rem;
+    color: white;
+    border: 3px solid #0f74bc;
+    border-radius: 40px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 3px 7px #76e2ff;
+    background-color: #76e2ff;
+}
+
+.about {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2%;
+    margin-bottom: 4%;
+}
+.about_box {
+    background-color: #0a4b8f;
+    width: 70%;
+    border-radius: 50px;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+/* Cada imagem + texto vão virar uma linha lado a lado */
+.about_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.onda {
+    margin-top: 3%;
+    width: 120%;
+}
+
+.onda2{
+    width: 120%;
+}
+
+.ondinha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about1, .about2 {
+    width: 50%;
+}
+
+/* IMAGENS */
+.img_about, .medico {
+    width: 40%;
+    height: auto;
+}
+
+.img_about{
+    margin-top: 9%;
+}
+/* Ajuste dos parágrafos */
+.about1 p, .about2 p {
+    color: #97e0ff;
+    font-size: 1.2rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.about1 p{
+    margin-top: 5%;
+}
+
+/* Título */
+.a1 {
+    color: #cdeeff;
+    font-size: 2.8rem;
+    margin-top: 8%;
+    font-family: "Montserrat", sans-serif;
+}
+
+hr {
+    margin-top: 3%;
+    border: 2px solid white;
+}
+
+.saiba_mais {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.5rem;
+    margin-top: 3%;
+    margin: 0;
+    flex: 1;
+    max-width: 60%;
+    line-height: 1.3;
+    color: #1463a6;
+}
+
+.saiba_mais.margem-reduzida {
+    margin-left: 5% !important; /* Valor menor para quando estiver no azul */
+}
+
+.about_button{
+    font-family: "Montserrat", sans-serif;
+    padding: 20px 40px; 
+    border: 2px solid #094f99;
+     border-radius: 20px; 
+     background: #236ed3; 
+     color: white; 
+     cursor: pointer; 
+     font-size: 2rem;
+     white-space: nowrap;
+     box-shadow: 8px 13px #0a4b8f;
+     flex-shrink: 0;
+}
+
+#conteudo-interativo {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px 5%;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%; 
+    margin: 0 auto;    
+}
+
+.about_caixa button:hover{
+    background-color: #2164bd;
+}
+
+.about_caixa button:active {
+  background-color: #2164bd;
+  box-shadow: 0 5px #0a4b8f;
+  transform: translateY(4px);
+}
+
+/* Equipe */ 
+
+/* Container Principal da Equipe */
+.secao-equipe-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 2%;
+    overflow: visible;
+}
+
+.equipe-content {
+    background-color: #4facfe;
+    
+    /* TAMANHO DA CAIXA: largura reduzida para 85% do espaço */
+    width: 100%;
+    max-width: 1000px; 
+    
+    /* BORDAS ARREDONDADAS: para parecer uma caixa solta */
+    border-radius: 30px;
+    color: #0a4b8f;
+    padding: 40px;
+    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    /*width: 90%;
+    max-width: 1100px;
+    text-align: center;
+    color: white;*/
+}
+
+.titulo-equipe {
+    font-size: 2.5rem;
+    margin: 40px auto 40px;
+    text-transform: uppercase;
+    margin-left: 10%;
+}
+
+#t2 {
+    text-align: center;
+    margin-left: 0;
+}
+.subtitulo-equipe {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 5%;
+}
+.texto-equipe {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0px auto 20px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Divisor Branco */
+.divisor-equipe {
+    border-top: 3px solid white;
+    margin: 40px 0;
+}
+
+/* GRID DOS CARDS - Aqui é onde a mágica acontece */
+.grid-equipe {
+     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* ESTILO DO CARD */
+.card-membro {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+    background-color: #4facfe;
+    box-shadow: 5px 10px#badfff;
+}
+
+.foto-membro {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+}
+.foto-membro img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    display: block;
+}
+
+.cargo-tag {
+    background-color: #0d2c4d;
+    box-shadow: 3px 4px #0d2c4d;
+    border: 2px solid #afdeff;
+    color: #4facfe;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 5px;
+    white-space: nowrap;
+
+}
+
+.info-membro {
+    flex: 1;
+    min-width: 0;
+}
+
+.nome-membro {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0d2c4d;
+}
+
+.desc-membro {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    color: #0d2c4d;
+    opacity: 0.9;
+}
+
+/* Ícones de redes sociais */
+.redes-sociais {
+     margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.redes-sociais i {
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #0d2c4d;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.redes-sociais i:hover {
+    background-color: #1a4a7a;
+    color: white;
+}
+
+/* Estilo do botão quando estiver dentro do azul */
+secao-equipe-container .saiba_mais {
+    color: white !important;
+}
+
+.secao-equipe-container about_button{
+    font-family: "Montserrat", sans-serif;
+    float: right;
+    padding: 20px 40px;
+    border: 2px solid #094f99;
+     border-radius: 20px; 
+     background: #236ed3; 
+     color: white; 
+     cursor: pointer; 
+     font-size: 2rem;
+     white-space: nowrap;
+     margin-top: -8%;
+     margin-right: 10%;
+     box-shadow: 8px 13px #0a4b8f;
+}
+
+#destino-botao button:hover{
+    background-color: #2164bd;
+}
+
+#destino-botao button:active {
+  background-color: #2164bd;
+  box-shadow: 0 5px #0a4b8f;
+  transform: translateY(4px);
+}
+
+#destino-botao {
+     margin-top: 20px;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    overflow: visible !important;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+
+#destino-botao .about_button {
+    margin-right: 0;
+    box-shadow: 8px 13px #0a4b8f;
+}
+
+#texto-instrucao {
+    font-size: 2rem;
+}
+
+/*.saiba_mais {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.5rem;
+    margin-top: 3%;
+    width: 50%;
+    margin-left: 16%;
+    color: #1463a6;
+}
+
+.saiba_mais.margem-reduzida {
+    margin-left: 5% !important; /* Valor menor para quando estiver no azul 
+}
+
+.about_button{
+    font-family: "Montserrat", sans-serif;
+    float: right;
+    padding: 20px 40px; 
+    border: 2px solid #094f99;
+     border-radius: 20px; 
+     background: #236ed3; 
+     color: white; 
+     cursor: pointer; 
+     font-size: 2rem;
+     white-space: nowrap;
+     margin-top: -8%;
+     margin-right: 10%;
+     box-shadow: 8px 13px #0a4b8f;
+}*/
+
+.ft-footer {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 10%;
+    background: #0e63c9;
+    color: white;
+    padding: 60px 40px 40px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* Mantém o rodapé sempre colado no final 
+    flex: 1;
+    display: flex;
+    flex-direction: column;*/
+}
+
+/* linha superior */
+.ft-top-line {
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+}
+
+/* marca d'água */
+.ft-footer::before {
+    content: "";
+    background: url("../img/logo2.png") no-repeat;
+    background-size: 500px;
+    background-position: center right;
+    opacity: 0.15;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* conteúdo das colunas */
+.ft-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+/* colunas */
+.ft-columns {
+    display: flex;
+    gap: 100px;
+}
+
+.ft-col {
+    min-width: 160px;
+}
+
+/* títulos */
+.ft-title {
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* =============================
+   LISTAS SEM BOLINHAS E SEM LINK AZUL
+============================= */
+
+.ft-list {
+    list-style: none;      /* ❗ remove as bolinhas */
+    padding: 0;
+    margin: 0;
+}
+
+.ft-list li {
+    margin: 7px 0;
+}
+
+.ft-list a {
+    color: #bfe1ff !important;   /* ❗ mantém cor sempre azul clara */
+    text-decoration: none !important; /* ❗ remove linha azul */
+    font-size: 15px;
+}
+
+/* caixa newsletter */
+.ft-news {
+    background: #0076e4;
+    padding: 30px;
+    border-radius: 25px;
+    width: 310px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* email sempre branco */
+.ft-email {
+    width: 90%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #38b6ff;
+    background: transparent;
+    color: #ffffff !important;   /* 🔥 FONTE BRANCA */
+    margin-bottom: 18px;
+}
+
+.ft-email::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+/* botão enviar */
+.ft-btn-enviar {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 2px solid white;
+    background: #003865;
+    color: white;
+    cursor: pointer;
+}
+
+/* =============================
+   RODAPÉ FINAL — SEM ESPAÇO
+============================= */
+.ft-bottom {
+    margin-top: auto;  /* Mantém COLADO NO FINAL */
+    border-top: 1px solid rgba(255,255,255,0.5);
+    padding-top: 25px;
+
+    display: flex;
+    flex-direction: column;  /* igual à imagem */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    text-align: center;
+    z-index: 5;
+}
+
+/* texto direitos autorais */
+.ft-copy {
+    font-size: 14px;
+}
+
+/* redes sociais */
+.ft-social img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}

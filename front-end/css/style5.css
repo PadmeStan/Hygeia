@@ -1,0 +1,305 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+body{
+  background: #f6faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerPai{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+}
+
+
+.formCadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2.5px solid #004aad;
+  border-radius:  2vw;
+  padding: 5% 4%;
+  gap: 1.5vw;
+}
+
+.formCadastro h1{
+  font-size: 32pt;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #252f76;
+}
+
+.formCadastro h2{
+  font-size: 16pt;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #1f7ed6;
+}
+
+.formCadastro .mobile-text{
+  display: none
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: flex-start;
+  gap: 1.5em;
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input-group{
+  display: flex;
+  gap: 1vw;
+}
+
+
+form p{
+  font-size:14pt;
+  color: #38b6ff;
+  font-weight: 500;
+}
+
+.input-container{
+  width: 5vw;
+  height: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1.5px solid #004aad;
+  overflow: hidden;
+  transition: all 0.2s ease; 
+}
+
+
+/* 2. Remove o estilo padrão do INPUT interno */
+.input-container input {
+  border: none;
+  outline: none; 
+  width: 100%;
+  background: transparent;
+}
+
+/* 3. A MÁGICA: Quando o input é clicado, a DIV ganha o contorno */
+.input-container:focus-within ,.select-container:focus-within{
+  border-color: #007bff; /* Muda a cor da borda da div */
+  outline: 2px solid rgba(0, 123, 255, 0.3); /* Simula um outline suave na div */
+  outline-offset: 2px;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+  width: 100%;
+  padding: 12px 18px;
+  color: #004aad;
+  font-size: 1vw;
+  text-align: center;
+  border: none;
+  outline: none;
+  &::placeholder{
+    color: #3484b2;
+    text-transform: uppercase;
+  }
+}
+
+.reenviar-codigo{
+  font-size: 2vw;
+  font-weight: 700;
+  color: #008bff;
+}
+
+
+/*esse código é pra estilizar o aviso
+que está embaixo dos inputs*/
+
+/*OBS: caso o código não funcione com 
+o aviso, vcs podem adicionar so na 
+versão 2.0 do site*/
+.erro {
+  display: block;
+  color: #ff4d4d;
+  font-size: 1vw;
+  margin-top: 4px;
+  opacity: 0;
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-top: -5px;
+  transition: 0.3s;
+  overflow-wrap: break-word;
+}
+
+
+.erroActive + .erro{
+  opacity: 1;
+}
+
+.input-container.erroActive{
+  border-color: #ff4d4d;
+}
+
+
+
+
+
+/*form.erroActive .erro{
+opacity: 1;
+}
+
+form.erroActive .input-container{
+border-color: #ff4d4d;
+}*/
+
+
+button{
+  width: 230px;
+  height: 56px;
+  margin-top: 3vw;
+  font-size: 16pt;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: none;
+  background-color: #017bff;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/*Responsividade para TABLET*/
+
+/*OBS: Aqui eu só troquei o tamanho
+dos elementos usando a unidade vw, 
+ela deixa o tamanho do elemento dependendo
+do tamanho da tela*/
+
+@media (max-width: 1420px){
+  
+  .formCadastro{
+    border-radius: 3vw;
+  }
+  
+  .formCadastro h1{
+  font-size: 3vw;
+}
+  
+  .formCadastro h2{
+  font-size: 1.4vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #1f7ed6;
+}
+  
+ .formContainer{
+   gap: 2vw;
+ }
+  
+  button{
+    font-size: 16px;
+    width: 170px;
+    height: 40px;
+  }
+}
+
+
+@media (max-width: 1090px){
+  
+  .formCadastro{
+    padding: 12% 7%;
+    border-radius: 3vw;
+  }
+  
+  .input-container{
+  width: 7vw;
+  height: 7vw;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] , select{
+    font-size: 1.5vw;
+  }
+  
+  
+}
+
+@media (max-width: 720px){
+  
+  .containerPai{
+    height: 80vh;
+  }
+  
+  .formCadastro{
+    padding: 35px 20px;
+    gap: 16px;
+    border-radius: 22px;
+    border-width: 2px;
+  }
+  
+  .formCadastro h1{
+  font-size: 32px;
+  }
+    
+  .formCadastro h2{
+  font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .formCadastro .desktop-text{
+  display: none;
+}
+  
+  .formCadastro .mobile-text{
+  display: block;
+}
+  
+  form p{
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .input-container {
+  width: 50px;
+  height: 50px;
+    border-radius: 8px;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] , select{
+    font-size: 13.5px;
+    padding: 3px 10px;
+  }
+  
+  .reenviar-codigo{
+    font-size: 16px;
+  }
+  
+.erro {
+  margin-top: 8px;
+  font-size: 12px;
+}
+  
+}
+  
+  
+  
+  
+
+
+
+ 

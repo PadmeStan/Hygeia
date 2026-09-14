@@ -1,0 +1,503 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+body{
+  background: #f6faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerPai{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+}
+
+
+.formCadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2.5px solid #004aad;
+  border-radius:  50px;
+  padding: 5%;
+  gap: 1vw;
+}
+
+.formCadastro h1{
+  font-size: 32pt;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #252f76;
+}
+
+.formCadastro h2{
+  font-size: 16pt;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #1f7ed6;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: flex-start;
+  gap: 0.5em;
+}
+
+form p{
+    font-weight: 600;
+}
+
+/*AVATAR / icone de perfil do nosso usuario*/
+
+.avatar{
+  width: 140px;
+  height: 140px;
+  background-color: transparent;
+  border: 2px solid #017bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-icon{
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background-color: #017bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-icon img{
+  width: 115px;
+}
+
+.user-button{
+  content: " ";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: #f6faff;
+  transform: translate(50px,50px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-button::before{
+  content: " ";
+  position: relative;
+  display: block;
+  width: 37px;
+  height: 37px;
+  background-color: #38b6ff;
+  border-radius: 50%;
+  background-image: url('../img/IMG/lápis-icone.png');
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-avatar-icon , .user-button{
+  position: absolute;
+}
+
+
+form p{
+  font-size:14pt;
+  color: #38b6ff;
+  align-self: flex-start;
+}
+
+.input-container, .select-container{
+  width: 32vw;
+  height: 4.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1.5px solid #004aad;
+  overflow: hidden;
+  transition: all 0.2s ease; 
+}
+
+.grupoDeInput{
+  display: flex;
+  gap: 2vw;
+  
+}
+
+.grupoDeInput .little-child{
+  display: flex;
+  gap: 0.5em;
+}
+
+.grupoDeInput .little-child .input-container,
+.grupoDeInput .little-child .select-container{
+  width: 15vw;
+}
+
+.little-child{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 2. Remove o estilo padrão do INPUT interno */
+.input-container input {
+  border: none;
+  outline: none; 
+  width: 100%;
+  background: transparent;
+}
+
+/* 3. A MÁGICA: Quando o input é clicado, a DIV ganha o contorno */
+.input-container:focus-within ,.select-container:focus-within{
+  border-color: #007bff; /* Muda a cor da borda da div */
+  outline: 2px solid rgba(0, 123, 255, 0.3); /* Simula um outline suave na div */
+  outline-offset: 2px;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+  width: 100%;
+  padding: 12px 18px;
+  color: #004aad;
+  font-size: 1vw;
+  border: none;
+  outline: none;
+  &::placeholder{
+    color: #3484b2;
+    text-transform: uppercase;
+  }
+}
+
+select{
+  width: 90%;
+  padding: 12px;
+  padding-right: 15%;
+  background: transparent;
+  color: #004aad;
+  font-size: 1vw;
+  border: none;
+  outline: none;
+  appearance: none;
+  position: relative;
+}
+
+.select-container .seta-icon{
+  position: absolute;
+  transform: translateX(200%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.input-container .user-icon img{
+  width: 4.5vw;
+  padding-right: 15px;
+}
+
+.input-container .calender-icon img{
+  width: 4vw;
+  padding-right: 20px
+}
+
+.select-container .seta-icon img{
+  width: 3vw;
+  padding-right: 20px;
+}
+
+.input-container .card-icon img{
+  width: 4vw;
+  padding-right: 20px;
+}
+
+.input-container .whatsapp-icon img{
+  width: 4vw;
+  padding-right: 20px;
+}
+
+.input-container .password-icon img{
+  width: 4vw;
+  padding-right: 20px;
+}
+
+
+/*esse código é pra estilizar os avisos
+que tão embaixo dos inputs*/
+
+/*OBS: caso o código não funcione com 
+os avisos, vcs podem adicionar so na 
+versão 2.0 do site*/
+.erro {
+  display: block;
+  color: #ff4d4d;
+  font-size: 0.9vw;
+  margin-top: 4px;
+  opacity: 0;
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-top: -5px;
+  transition: 0.3s;
+  white-space: wrap;
+}
+
+
+/*.input-container.erroActive + .erro,
+.select-container.erroActive + .erro {
+  opacity: 1;
+}
+
+.input-container.erroActive,
+.select-container.erroActive {
+  border-color: #ff4d4d;
+}*/
+
+
+
+/*esse aqui é um codigo utilizei para eidtar as mensagems
+dos inputs , porém é bom deixar caso ocorra algum erro*/
+
+/*form.erroActive .erro {
+opacity: 1;
+}
+
+form.erroActive .input-container, form.erroActive .select-container {
+border-color: #ff4d4d;
+}*/
+
+
+form.erroActive .senhaInformacao{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.senhaInformacao{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.senhaInformacao h2{
+  font-size: 16pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #1f7ed6;
+}
+
+.senhaInformacao ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.senhaInformacao ul li{
+  color: #1f7ed6;
+  text-transform: lowercase;
+}
+
+.senhaInformacao ul li::first-letter{
+  text-transform: uppercase;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+} 
+button{
+  width: 230px;
+  height: 56px;
+  margin-top: 10px;
+  font-size: 16pt;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: none;
+  background-color: #017bff;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/*Responsividade para TABLET*/
+
+/*OBS: Aqui eu só troquei o tamanho
+dos elementos usando a unidade vw, 
+ela deixa o tamanho do elemento dependendo
+do tamanho da tela*/
+
+@media (max-width: 1420px){
+  
+  .formCadastro{
+    border-radius: 3vw;
+  }
+  
+  .formCadastro h1{
+  font-size: 3vw;
+}
+  
+  .formCadastro h2{
+  font-size: 1.4vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #1f7ed6;
+}
+  
+  .senhaInformacao h2{
+  font-size: 16pt;
+  }
+  
+  button{
+    font-size: 16px;
+    width: 170px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 1090px){
+  
+  .formCadastro{
+    padding: 7% 12%;
+    border-radius: 5vw;
+  }
+  
+  .input-container, .select-container{
+  width: 45vw;
+  height: 6.5vw;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"] , select{
+    font-size: 1.5vw;
+  }
+
+.grupoDeInput .little-child .input-container,
+.grupoDeInput .little-child .select-container{
+  width: 22vw;
+}
+  
+  .select-container .seta-icon{
+  transform: translateX(250%);
+}
+  
+  .select-container .seta-icon img{
+  width: 3vw;
+  padding-right: 10px;
+}
+  
+    .little-child .erro{
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+}
+  
+}
+
+@media (max-width: 720px){
+  
+  .formCadastro{
+    padding: 50px 10px;
+  }
+  
+  .formCadastro h1{
+  font-size: 32px;
+  }
+    
+  .formCadastro h2{
+  font-size: 14px;
+  }
+  
+  form p{
+    font-size: 14px;
+  }
+  
+  .input-container, .select-container{
+  width: 350px;
+  height: 50px;
+    border-radius: 10px;
+  }
+  
+  .grupoDeInput .little-child .input-container,
+.grupoDeInput .little-child .select-container{
+  width: 170px;
+}
+  
+  input[type="text"], input[type="password"], input[type="email"] , select{
+    font-size: 13.5px;
+    padding: 3px 10px;
+  }
+  
+  .select-container .seta-icon{
+  transform: translateX(80px);
+}
+
+.input-container .user-icon img{
+  width: 50px;
+  padding-right: 15px;
+}
+
+.input-container .calender-icon img{
+  width: 40px;
+  padding-right: 10px;
+}
+
+.select-container .seta-icon img{
+  width: 35px;
+  padding-right: 20px;
+}
+
+.input-container .card-icon img{
+  width: 50px;
+  padding-right: 20px;
+}
+
+.input-container .whatsapp-icon img{
+  width: 45px;
+  padding-right: 15px;
+}
+  
+.input-container .password-icon img{
+  width: 50px;
+  padding-right: 20px;
+}
+  
+  .senhaInformacao h2{
+  font-size: 20px;
+  }
+  
+  
+.erro {
+  font-size: 12px;
+}
+  
+}
+  
+  
+  
+  
+
+
+

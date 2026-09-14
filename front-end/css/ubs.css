@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background: #e8eef7;
+}
+
+/*barra de navegação*/
+.nave {
+    font-family: "Open Sans", sans-serif;
+    background-color: #168bff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    height: 90px;
+    max-width: 90px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 400;
+}
+
+.nav-item :hover {
+    color: #e3f0ff;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login button {
+    background-color: #168bff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin: 0 15px;
+
+}
+
+.login button:hover {
+    background-color: #2286e9;
+
+}
+
+.login .blista {
+   background-color: #0e63c9;
+}
+
+.login button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.login button a:hover {
+    color: #e3f0ff;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+/*barra de pesquisa*/
+
+.search-container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 1px 80px; 
+    box-sizing: border-box;
+}
+
+.search-container form {
+    display: flex;           /* deixa input e botão lado a lado */
+    width: 100%;
+    align-items: stretch;
+}
+
+.search-container input[type=text] {
+    flex: 1;                 /* ocupa todo o espaço disponível */
+    padding: 12px;
+    font-size: 17px;
+    border: 2px solid #168bff;
+    border-right: none;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #1b70cc;
+    font-size: 17px;
+    border: 2px solid #168bff;
+    cursor: pointer;
+    border-left: none; 
+    margin: 0;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container button:hover {
+    background: #165ca7;
+}
+
+i {
+    color: white; /* o icone da barra*/
+}
+
+.caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 2%;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10%;
+}
+
+.slides {
+    width: 1100px;
+    height: 340px;
+    overflow: hidden; /*faz as coisas não saírem pra fora do slide*/
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 12px 12px #168bff;
+    position: relative;
+    z-index: 1;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #0a4b8f;
+    border-radius: 25px;
+    color: white;
+    padding: 40px;
+    box-sizing: border-box;
+    position: absolute;
+    box-shadow: 0px 12px #168bff; 
+
+}
+
+#titulo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+#para {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+}
+
+.caixa-flecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+}
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 4rem;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    z-index: 10;
+    position: absolute;
+}
+
+.linha {
+    margin-top: 3%;
+    width: 100%;
+}
+
+.zigzag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+ 
+    /* Caixa externa azul */
+    .card {
+      margin-top: 3%;
+      width: 100%;
+      background: #3ab4f2;
+      padding: 50px; /* espaço entre borda externa e a linha interna */
+      box-sizing: border-box;
+    }
+ 
+    /* Linha azul clara interna — envolve imagem + texto */
+    .card-inner {
+      border: 2px solid #0a4b8f; /* linha azul clara DENTRO do card */
+      border-radius: 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 22px 28px;
+      gap: 28px;
+    }
+ 
+    .card-image {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+      object-fit: contain;
+    }
+ 
+    .card-text {
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 1.75;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      font-family: "Montserrat", sans-serif;;
+    }
+ 
+
+    .boxtitle {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     padding-right: 20px;
+    padding-bottom: 20px;
+}
+.about_title {
+    margin-top: 8%;
+    width:50%;
+    font-size: 2.5rem;
+    color: white;
+    border: 3px solid #0f74bc;
+    border-radius: 40px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 3px 7px #76e2ff;
+    background-color: #76e2ff;
+    font-family: "Montserrat", sans-serif;;
+}
+
+.about {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2%;
+}
+.about_box {
+    background-color: #0a4b8f;
+    width: 90%;
+    border-radius: 50px;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Cada imagem + texto vão virar uma linha lado a lado */
+.about_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.ondinha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    width: 120%;
+    margin-left: -10%;
+}
+
+.onda {
+    margin-top: 3%;
+    width: 100%;
+    height: auto;
+}
+
+.about1, .about2 {
+    width: 50%;
+}
+
+/* IMAGENS */
+.img_about, .medico {
+    width: 40%;
+    height: auto;
+}
+
+.img_about{
+    margin-top: 9%;
+}
+/* Ajuste dos parágrafos */
+.about1 p, .about2 p {
+    color: #97e0ff;
+    font-size: 1.4rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.about1 p{
+    margin-top: 5%;
+}
+
+/* Título */
+.a1 {
+    color: #cdeeff;
+    font-size: 2.8rem;
+    margin-top: 8%;
+}
+
+
+body.ft-mode {
+    background: #0e63c9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =============================
+            FOOTER
+============================= */
+
+.ft-footer {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 10%;
+    background: #0e63c9;
+    color: white;
+    padding: 60px 40px 40px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* Mantém o rodapé sempre colado no final */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* linha superior */
+.ft-top-line {
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+}
+
+/* marca d'água */
+.ft-footer::before {
+    content: "";
+    background: url("../img/logo2.png") no-repeat;
+    background-size: 500px;
+    background-position: center right;
+    opacity: 0.15;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* conteúdo das colunas */
+.ft-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+/* colunas */
+.ft-columns {
+    display: flex;
+    gap: 100px;
+}
+
+.ft-col {
+    min-width: 160px;
+}
+
+/* títulos */
+.ft-title {
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* =============================
+   LISTAS SEM BOLINHAS E SEM LINK AZUL
+============================= */
+
+.ft-list {
+    list-style: none;      /* ❗ remove as bolinhas */
+    padding: 0;
+    margin: 0;
+}
+
+.ft-list li {
+    margin: 7px 0;
+}
+
+.ft-list a {
+    color: #bfe1ff !important;   /* ❗ mantém cor sempre azul clara */
+    text-decoration: none !important; /* ❗ remove linha azul */
+    font-size: 15px;
+}
+
+/* caixa newsletter */
+.ft-news {
+    background: #0076e4;
+    padding: 30px;
+    border-radius: 25px;
+    width: 310px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* email sempre branco */
+.ft-email {
+    width: 90%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #38b6ff;
+    background: transparent;
+    color: #ffffff !important;   /* 🔥 FONTE BRANCA */
+    margin-bottom: 18px;
+}
+
+.ft-email::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+/* botão enviar */
+.ft-btn-enviar {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 2px solid white;
+    background: #003865;
+    color: white;
+    cursor: pointer;
+}
+
+/* =============================
+   RODAPÉ FINAL — SEM ESPAÇO
+============================= */
+.ft-bottom {
+    margin-top: auto;  /* Mantém COLADO NO FINAL */
+    border-top: 1px solid rgba(255,255,255,0.5);
+    padding-top: 25px;
+
+    display: flex;
+    flex-direction: column;  /* igual à imagem */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    text-align: center;
+    z-index: 5;
+}
+
+/* texto direitos autorais */
+.ft-copy {
+    font-size: 14px;
+}
+
+/* redes sociais */
+.ft-social img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+    @media (max-width: 580px) {
+      .card-inner {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card-image {
+        width: 140px;
+        height: 160px;
+      }
+      .card-text {
+        font-size: 13px;
+        text-align: center;
+      }
+    }
