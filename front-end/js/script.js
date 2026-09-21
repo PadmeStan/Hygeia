@@ -15,12 +15,3 @@ cadastroButton.onclick = () => {
     card.classList.remove("loginActive")
     card.classList.add("cadastroActive")
 }
-<<<<<<< HEAD
-
-document.getElementById('formLogin').addEventListener('submit', function(e) {
-    e.preventDefault(); // impede o envio real pro back-end por enquanto
-    window.location.href = 'dashboard.html'; // redireciona provisoriamente
-  });
-
-=======
->>>>>>> 20889172977457acf83edbfd2aee4ce1c0145219
