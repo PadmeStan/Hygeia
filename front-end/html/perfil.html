@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/perfil.css">
+<title>Perfil do Usuário</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo-row">
+      <div class="logo-slot" title="Espaço reservado para a logo">
+        <img src="../img/logo.png" alt="Logo da empresa" class="logo-image">
+      </div>
+      <span class="logo-text">HYGEIA</span>
+      <button class="collapse-btn" aria-label="Recolher menu">
+        <i class="ti ti-chevrons-left" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item"><i class="ti ti-layout-grid" aria-hidden="true"></i><a href="dashboard.html">Home</a></li>
+      <li class="nav-item"><i class="ti ti-calendar-event" aria-hidden="true"></i><a href="consultas.html">Consultas</a></li>
+      <li class="nav-item"><i class="ti ti-map-pin" aria-hidden="true"></i><a href="#">Localização</a></li>
+      <li class="nav-item"><i class="ti ti-users" aria-hidden="true"></i><a href="membros.html">Membros</a></li>
+      <li class="nav-item"><i class="ti ti-folder" aria-hidden="true"></i><a href="#">Dados</a></li>
+      <li class="nav-item"><i class="ti ti-vaccine" aria-hidden="true"></i><a href="#">Vacinas</a></li>
+      <li class="nav-item"><i class="ti ti-help-circle" aria-hidden="true"></i><a href="#">Ajuda</a></li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="theme-toggle">
+        <button class="selected" aria-label="Tema claro"><i class="ti ti-sun" aria-hidden="true"></i></button>
+        <button aria-label="Tema escuro"><i class="ti ti-moon" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="user-row active">
+        <div class="avatar-mini"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div class="user-info">
+          <div class="user-name">Stella Johnson</div>
+          <div class="user-email">Exemplodeemail@gmail.com</div>
+        </div>
+        <i class="ti ti-dots" aria-hidden="true"></i>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 class="page-title">Perfil do Usúario</h1>
+      <div class="topbar-icons">
+        <button class="icon-btn" aria-label="Notificações"><i class="ti ti-bell" aria-hidden="true"></i></button>
+        <button class="icon-btn" aria-label="Mensagens"><i class="ti ti-mail" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div class="content-placeholder">
+      <div class="perfil-wrapper">
+
+        <!-- BANNER + AVATAR -->
+        <div class="perfil-banner">
+          <button class="btn-trocar-conta">
+            Trocar conta <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="perfil-header">
+          <div class="avatar-grande">
+            <img src="../img/perfil.png" alt="Foto do usuário" class="avatar-img">
+            <button class="btn-camera" aria-label="Alterar foto">
+              <i class="fa-solid fa-camera"></i>
+            </button>
+          </div>
+
+          <div class="perfil-nome-row">
+            <h2 class="perfil-nome">Stella Johnson</h2>
+            <span class="badge-titular">Titular</span>
+          </div>
+
+          <button class="btn-editar">
+            <i class="fa-solid fa-pen"></i> Editar
+          </button>
+        </div>
+
+        <!-- CARD DE DADOS -->
+        <div class="perfil-box">
+
+          <h2 class="nome">Stella Johnson Pereira</h2>
+
+          <div class="linha"></div>
+
+          <div class="dados">
+
+            <div class="campo">
+              <span class="titulo">CPF</span>
+              <span class="valor">000.000.000-00</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Gênero</span>
+              <span class="valor">FEMININO</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">CEP</span>
+              <span class="valor">00000-000</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Avenida/Rua</span>
+              <span class="valor">HYGEIA 06</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Data de Nascimento</span>
+              <span class="valor">03/10/1989</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Cartão de SUS</span>
+              <span class="valor">000 0000 0000 0000</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Cidade</span>
+              <span class="valor">SÃO JOSÉ DE RIBAMAR</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Número da casa</span>
+              <span class="valor">50</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">E-mail</span>
+              <span class="valor">projetohygeia@gmail.com</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Telefone</span>
+              <span class="valor">(00) 00000-0000</span>
+            </div>
+
+            <div class="campo">
+              <span class="titulo">Bairro</span>
+              <span class="valor">Piçarreira</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
