@@ -1,0 +1,805 @@
+
+.ajuda-section {
+  --ajuda-azul: #168cff;
+  --ajuda-azul-escuro: #044f97;
+  --ajuda-borda: light-dark(#d4e6f8, #285b8d);
+  --ajuda-card: light-dark(#ffffff, #123b69);
+  --ajuda-fundo: light-dark(#f6faff, #0c2c53);
+  --ajuda-texto: light-dark(#173b60, #eef6ff);
+  --ajuda-texto-secundario: light-dark(#66819d, #b4cce5);
+  --ajuda-hover: light-dark(#eef6ff, #194a7b);
+
+  width: 100%;
+  min-width: 0;
+  padding: 30px;
+  color: var(--ajuda-texto);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ajuda-section *,
+.ajuda-section *::before,
+.ajuda-section *::after {
+  box-sizing: border-box;
+}
+
+.ajuda-section button,
+.ajuda-section input,
+.ajuda-section textarea,
+.ajuda-section select {
+  font: inherit;
+}
+
+.ajuda-section button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ajuda-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.ajuda-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ajuda-azul);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ajuda-header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.ajuda-header p,
+.ajuda-section-heading p {
+  color: var(--ajuda-texto-secundario);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ajuda-header p {
+  max-width: 650px;
+}
+
+.ajuda-header-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 24px;
+  background: var(--ajuda-card);
+  color: var(--ajuda-azul);
+}
+
+.ajuda-header-icon svg {
+  width: 39px;
+  height: 39px;
+}
+
+/* Tutorial */
+
+.ajuda-tutorial-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 240px;
+  margin-bottom: 38px;
+  padding: 30px 36px;
+  overflow: hidden;
+  border: 1px solid #168cff;
+  border-radius: 24px;
+  background: linear-gradient(
+    115deg,
+    light-dark(#e4f2ff, #103d6d),
+    light-dark(#f8fbff, #0c2c53)
+  );
+}
+
+.tutorial-banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+}
+
+.ajuda-tag {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 7px;
+  background: light-dark(#d1eaff, #174f83);
+  color: var(--ajuda-azul-escuro);
+  color: light-dark(#044f97, #b8e0ff);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ajuda-tutorial-banner h2 {
+  margin: 14px 0 9px;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -.5px;
+}
+
+.ajuda-tutorial-banner p {
+  max-width: 460px;
+  margin-bottom: 20px;
+  color: var(--ajuda-texto-secundario);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.ajuda-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 45px;
+  padding: 0 20px;
+  border: 1px solid var(--ajuda-azul);
+  border-radius: 11px;
+  background: var(--ajuda-azul);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.ajuda-btn-primary svg {
+  width: 17px;
+  height: 17px;
+}
+
+.ajuda-btn-primary:hover {
+  background: #0875d8;
+  box-shadow: 0 6px 18px #168cff35;
+  transform: translateY(-2px);
+}
+
+.ajuda-btn-primary:focus-visible,
+.ajuda-option-card:focus-visible,
+.ajuda-faq-item summary:focus-visible {
+  outline: 3px solid #71ddff;
+  outline-offset: 4px;
+}
+
+.tutorial-banner-illustration {
+  display: grid;
+  flex: 0 1 300px;
+  min-width: 190px;
+  place-items: center;
+  align-self: stretch;
+}
+
+.tutorial-window {
+  width: 100%;
+  max-width: 280px;
+  overflow: hidden;
+  border: 1px solid light-dark(#a9d2fa, #3374aa);
+  border-radius: 15px;
+  background: var(--ajuda-card);
+  box-shadow: 0 15px 35px #044f9718;
+  transform: rotate(2deg);
+}
+
+.tutorial-window-top {
+  display: flex;
+  gap: 5px;
+  padding: 12px;
+  border-bottom: 1px solid var(--ajuda-borda);
+}
+
+.tutorial-window-top span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #168cff75;
+}
+
+.tutorial-window-body {
+  display: flex;
+  height: 120px;
+}
+
+.tutorial-mini-sidebar {
+  width: 23%;
+  background: light-dark(#e0efff, #164675);
+}
+
+.tutorial-mini-content {
+  position: relative;
+  flex: 1;
+  padding: 15px;
+}
+
+.tutorial-mini-line {
+  width: 75%;
+  height: 6px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  background: light-dark(#c4ddf6, #285b8d);
+}
+
+.tutorial-mini-line.short {
+  width: 45%;
+}
+
+.tutorial-mini-cards {
+  display: flex;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.tutorial-mini-cards span {
+  width: 45%;
+  height: 35px;
+  border: 1px solid light-dark(#c4ddf6, #285b8d);
+  border-radius: 5px;
+  background: var(--ajuda-fundo);
+}
+
+.tutorial-mini-highlight {
+  position: absolute;
+  right: 12%;
+  bottom: 12px;
+  width: 34%;
+  height: 20px;
+  border: 2px solid #168cff;
+  border-radius: 5px;
+}
+
+/* Títulos e seções */
+
+.ajuda-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ajuda-section-heading h2 {
+  margin: 0 0 7px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -.4px;
+}
+
+.ajuda-section-heading p {
+  margin: 0;
+}
+
+.ajuda-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 42px;
+}
+
+.ajuda-option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 22px 18px;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 17px;
+  background: var(--ajuda-card);
+  color: var(--ajuda-texto);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease;
+}
+
+.ajuda-option-card:hover {
+  border-color: var(--ajuda-azul);
+  background: var(--ajuda-hover);
+  transform: translateY(-3px);
+}
+
+.ajuda-option-icon,
+.guia-card-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  background: light-dark(#e6f3ff, #194a7b);
+  color: var(--ajuda-azul);
+}
+
+.ajuda-option-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+}
+
+.ajuda-option-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ajuda-option-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+}
+
+.ajuda-option-text strong {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ajuda-option-text > span:not(.ajuda-option-link) {
+  color: var(--ajuda-texto-secundario);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.ajuda-option-link {
+  margin-top: 4px;
+  color: var(--ajuda-azul);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ajuda-option-link span {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform .2s ease;
+}
+
+.ajuda-option-card:hover .ajuda-option-link span {
+  transform: translateX(4px);
+}
+
+/* Guia de funcionalidades */
+
+.ajuda-content-section {
+  margin-bottom: 42px;
+  scroll-margin-top: 25px;
+}
+
+.guia-funcionalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.guia-card {
+  position: relative;
+  min-width: 0;
+  padding: 23px;
+  overflow: hidden;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 17px;
+  background: var(--ajuda-card);
+  transition:
+    border-color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.guia-card:hover {
+  border-color: var(--ajuda-azul);
+  box-shadow: 0 8px 25px #168cff12;
+  transform: translateY(-3px);
+}
+
+.guia-card-number {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  color: var(--ajuda-texto-secundario);
+  font-size: 11px;
+  font-weight: 800;
+  opacity: .65;
+}
+
+.guia-card-icon {
+  width: 47px;
+  height: 47px;
+  margin-bottom: 19px;
+  border-radius: 13px;
+}
+
+.guia-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.guia-card h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.guia-card p {
+  margin: 0;
+  color: var(--ajuda-texto-secundario);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* Formulário de problemas */
+
+.problema-form {
+  padding: 27px;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 19px;
+  background: var(--ajuda-card);
+}
+
+.problema-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 27px;
+}
+
+.problema-form-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 47px;
+  height: 47px;
+  place-items: center;
+  border-radius: 13px;
+  background: light-dark(#fff0db, #5c4528);
+  color: light-dark(#bf781b, #ffd49a);
+}
+
+.problema-form-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.problema-form-heading h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.problema-form-heading p {
+  margin: 0;
+  color: var(--ajuda-texto-secundario);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.problema-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.problema-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.problema-field > span {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.problema-field select,
+.problema-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 10px;
+  outline: none;
+  background: var(--ajuda-fundo);
+  color: var(--ajuda-texto);
+  font-size: 12px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.problema-field select {
+  min-height: 46px;
+  padding: 0 12px;
+}
+
+.problema-field textarea {
+  min-height: 135px;
+  padding: 14px;
+  resize: vertical;
+  line-height: 1.8;
+}
+
+.problema-field textarea::placeholder {
+  color: var(--ajuda-texto-secundario);
+  opacity: .8;
+}
+
+.problema-field select:focus,
+.problema-field textarea:focus {
+  border-color: var(--ajuda-azul);
+  box-shadow: 0 0 0 3px #168cff20;
+}
+
+.problema-field-full {
+  grid-column: 1 / -1;
+}
+
+.problema-field small {
+  color: var(--ajuda-texto-secundario);
+  font-size: 10px;
+}
+
+.problema-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ajuda-borda);
+}
+
+.problema-form-footer p {
+  max-width: 360px;
+  color: var(--ajuda-texto-secundario);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.problema-feedback {
+  margin-top: 18px;
+  padding: 13px 15px;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Dúvidas frequentes */
+
+.ajuda-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.ajuda-faq-item {
+  overflow: hidden;
+  border: 1px solid var(--ajuda-borda);
+  border-radius: 13px;
+  background: var(--ajuda-card);
+  transition: border-color .2s ease;
+}
+
+.ajuda-faq-item[open] {
+  border-color: var(--ajuda-azul);
+}
+
+.ajuda-faq-item summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 63px;
+  padding: 18px 50px 18px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+  list-style: none;
+  cursor: pointer;
+}
+
+.ajuda-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.ajuda-faq-item summary::after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 8px;
+  background: light-dark(#e6f3ff, #194a7b);
+  color: var(--ajuda-azul);
+  font-size: 19px;
+  font-weight: 500;
+  transform: translateY(-50%);
+  transition: transform .2s ease;
+}
+
+.ajuda-faq-item[open] summary::after {
+  content: '−';
+}
+
+.ajuda-faq-answer {
+  padding: 0 20px 20px;
+}
+
+.ajuda-faq-answer p {
+  margin: 0;
+  color: var(--ajuda-texto-secundario);
+  font-size: 11px;
+  line-height: 2;
+}
+
+/* Responsividade */
+
+@media (max-width: 1100px) {
+  .ajuda-section {
+    padding: 24px;
+  }
+
+  .ajuda-options-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guia-funcionalidades-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tutorial-banner-illustration {
+    flex-basis: 230px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ajuda-section {
+    padding: 18px 14px;
+  }
+
+  .ajuda-header {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .ajuda-header h1 {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  .ajuda-header p,
+  .ajuda-section-heading p {
+    font-size: 12px;
+  }
+
+  .ajuda-header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+  }
+
+  .ajuda-header-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .ajuda-tutorial-banner {
+    min-height: auto;
+    padding: 23px 20px;
+    border-radius: 19px;
+  }
+
+  .tutorial-banner-illustration {
+    display: none;
+  }
+
+  .ajuda-tutorial-banner h2 {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+
+  .ajuda-tutorial-banner p {
+    font-size: 12px;
+  }
+
+  .ajuda-options-grid,
+  .guia-funcionalidades-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ajuda-option-card {
+    padding: 19px 16px;
+  }
+
+  .ajuda-section-heading h2 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .guia-card {
+    padding: 21px;
+  }
+
+  .guia-card p {
+    font-size: 12px;
+  }
+
+  .problema-form {
+    padding: 20px 16px;
+  }
+
+  .problema-form-grid {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+
+  .problema-field-full {
+    grid-column: auto;
+  }
+
+  .problema-form-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .problema-form-footer .ajuda-btn-primary {
+    width: 100%;
+  }
+
+  .ajuda-faq-item summary {
+    padding: 17px 45px 17px 15px;
+    font-size: 12px;
+  }
+
+  .ajuda-faq-item summary::after {
+    right: 12px;
+  }
+
+  .ajuda-faq-answer {
+    padding: 0 15px 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ajuda-section {
+    padding: 15px 10px;
+  }
+
+  .ajuda-header-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ajuda-tutorial-banner {
+    padding: 19px 15px;
+  }
+
+  .ajuda-btn-primary {
+    padding: 0 14px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ajuda-section *,
+  .ajuda-section *::before,
+  .ajuda-section *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

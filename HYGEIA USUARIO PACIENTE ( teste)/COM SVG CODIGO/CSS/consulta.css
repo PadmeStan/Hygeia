@@ -1,0 +1,2966 @@
+
+.header-and-main main {
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* TOPO + BANNER DECORATIVO ACIMA DAS TABS */
+
+.agendar-topo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agendar-topo h2 {
+  margin: 0;
+}
+
+.agendar-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 22px;
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    light-dark(#e8f3ff, #123c69) 0%,
+    light-dark(#f5faff, #184b82) 60%,
+    light-dark(#dceeff, #1e5a99) 100%
+  );
+  border: 1px solid light-dark(#c7e2ff, #2a6099);
+}
+
+.agendar-banner::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  top: -35px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: light-dark(#168cff18, #5cb2ff1f);
+  pointer-events: none;
+}
+
+.agendar-banner-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #168cff, #005bb5);
+}
+
+.agendar-banner-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.agendar-banner-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: light-dark(#0063be, #8cc8ff);
+}
+
+.agendar-banner-texto p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: light-dark(#2c5882, #dceeff);
+}
+
+.agendar-banner-detalhe {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: light-dark(#0053a0, #bce0ff);
+  background: light-dark(#ffffffb8, #0b294980);
+  border: 1px solid light-dark(#b9daff, #326ca8);
+}
+
+.tittle-tab{
+ font-size: 21pt;
+  color: #4fa8e8;
+  color: light-dark(#4fa8e8, #9ccfff);
+    
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+/* TABS */
+
+.tabs {
+  width: 100%;
+}
+
+.tabs-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 6px;
+  width: fit-content;
+  position: relative;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  color: #78afe8;
+  color: light-dark(#78afe8, #9ccfff);
+  font-family: Montserrat, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tab.active {
+  color: #168cff;
+}
+
+.tabs-divider {
+  width: 2px;
+  height: 26px;
+  background: #9bcdff;
+  border-radius: 10px;
+}
+
+.tabs-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #168cff;
+  border-radius: 10px;
+  transition: transform 0.4s ease, width 0.4s ease;
+}
+
+.tabs-content {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.tabs-track {
+  display: flex;
+  width: 200%;
+  align-items: flex-start;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.tab-panel {
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.tabs-track.show-exames {
+  transform: translateX(-50%);
+}
+
+/* GRID DE ESPECIALIDADES */
+
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 22px 16px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.specialty-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.specialty-icon {
+  -webkit-tap-highlight-color: transparent;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 23px;
+  background-color: #176dff80;
+  border: 1.8px solid #176dff;
+  transition: transform 0.35s ease, background-color 0.25s ease;
+}
+
+.specialty-label {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: light-dark(#004aad, #9ccfff);
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .specialty-item:hover .specialty-icon {
+    transform: translateY(-3px) scale(1.06);
+  }
+
+  .specialty-item:hover .specialty-label {
+    color: light-dark(#003b73, #c4f4f9);
+  }
+}
+
+.specialty-item:active .specialty-icon {
+  transform: scale(0.94);
+  transition-duration: 0.2s;
+}
+
+/* CORES DAS ESPECIALIDADES */
+
+.bg-2 {
+  background-color: light-dark(#7fcde680, #38bdf866);
+  border-color: light-dark(#53a8c3, #7dd3fc);
+}
+
+.bg-3 {
+  background-color: light-dark(#84c92980, #65a30d80);
+  border-color: light-dark(#76b461, #a3e635);
+}
+
+.bg-4 {
+  background-color: light-dark(#ae3aff80, #9333ea80);
+  border-color: light-dark(#9e30ea, #c084fc);
+}
+
+.bg-5 {
+  background-color: light-dark(#ff5aa580, #ec489980);
+  border-color: light-dark(#ff5aa5, #f472b6);
+}
+
+.bg-6 {
+  background-color: light-dark(#7f30e480, #7c3aed80);
+  border-color: light-dark(#7f30e4, #a78bfa);
+}
+
+.bg-7 {
+  background-color: light-dark(#0063a4BF, #0284c799);
+  border-color: light-dark(#104271, #38bdf8);
+}
+
+.bg-8 {
+  background-color: light-dark(#5cd6fd80, #06b6d480);
+  border-color: light-dark(#15b0e1, #22d3ee);
+}
+
+.bg-9 {
+  background-color: light-dark(#ed8f2180, #d9770680);
+  border-color: light-dark(#ed8f21, #fbbf24);
+}
+
+.bg-10 {
+  background-color: light-dark(#0063a480, #2563eb80);
+  border-color: light-dark(#0063a4, #60a5fa);
+}
+
+.bg-11 {
+  background-color: light-dark(#ff365980, #e11d4880);
+  border-color: light-dark(#c52e48, #fb7185);
+}
+
+.bg-12 {
+  background-color: light-dark(#dd611b80, #ea580c80);
+  border-color: light-dark(#9f4512, #fb923c);
+}
+
+.bg-13 {
+  background-color: light-dark(#ffd55780, #eab30873);
+  border-color: light-dark(#d1a521, #fde047);
+}
+
+.bg-14 {
+  background-color: light-dark(#83ce60BF, #16a34a80);
+  border-color: light-dark(#11683f, #4ade80);
+}
+
+/* PAINEL DE CONSULTAS / DOCUMENTOS */
+
+.documentos-painel {
+  display: none;
+  background-color: light-dark(#ffffff, #0d2f52);
+  border-radius: 20px;
+  padding: 28px 32px;
+  border: 1px solid light-dark(#dbeafe, #1e4b7a);
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.documentos-painel.ativo {
+  display: flex;
+  animation: animarSubida 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes animarSubida {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.painel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.painel-controles {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dados-titulo {
+  font-size: 18pt;
+  font-weight: 700;
+  color: light-dark(#0053a0, #9ccfff);
+  margin: 0 0 6px;
+}
+
+.dados-contador {
+  font-size: 10pt;
+  color: light-dark(#64748b, #b0d4ff);
+  margin: 0;
+}
+
+.painel-divisor {
+  border: none;
+  height: 1px;
+  background-color: light-dark(#dbeafe, #1e4b7a);
+  margin: 0;
+}
+
+.lista-documentos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100px;
+}
+
+.doc-card {
+  background-color: light-dark(#f8fafc, #13385e);
+  border: 1px solid light-dark(#e2e8f0, #1f4a78);
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.2s ease;
+}
+
+.doc-card:hover {
+  background-color: light-dark(#f0f7ff, #1a4573);
+  border-color: #379dff;
+  transform: translateX(4px);
+}
+
+.doc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.doc-info h4 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: light-dark(#003b73, #f8fafc);
+  margin: 0;
+}
+
+.doc-info p {
+  font-size: 9pt;
+  line-height: 1.45;
+  color: light-dark(#64748b, #94a3b8);
+  margin: 0;
+}
+
+.situacao-texto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.situacao-texto::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.situacao-texto.agendada { color: light-dark(#4e8f0d, #9be84b); }
+.situacao-texto.agendada::before { background: #76c822; }
+
+.situacao-texto.processo { color: light-dark(#a67c00, #ffd84d); }
+.situacao-texto.processo::before { background: #f5c400; }
+
+.situacao-texto.cancelada { color: light-dark(#c41e58, #ff7aa8); }
+.situacao-texto.cancelada::before { background: #d92c68; }
+
+.situacao-texto.pendente { color: light-dark(#006fbe, #7cc0ff); }
+.situacao-texto.pendente::before { background: #168cff; }
+
+
+    /*painel sem marcações*/
+.estado-vazio {  
+  text-align: center;
+  padding: 46px 20px;
+  gap: 8px;
+  min-height: 150px;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.estado-vazio h4 {
+  margin: 0;
+  font-size: 13pt;
+  font-weight: 700;
+  color: light-dark(#0f3f6e, #ffffff);
+}
+
+.estado-vazio p {
+  margin: 0;
+  font-size: 10pt;
+  font-weight: 400;
+  color: light-dark(#64748b, #8fb4d9);
+}
+
+
+
+.doc-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-doc {
+  border: 1px solid light-dark(#379dff, #4da6ff);
+  background-color: light-dark(#ffffff, #103254);
+  color: light-dark(#006fbe, #9ccfff);
+  padding: 8px 15px;
+  border-radius: 9px;
+  font-size: 8.5pt;
+  font-weight: 700;
+  font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-doc:hover {
+  background-color: light-dark(#e0f2fe, #194878);
+}
+
+.btn-doc.primary {
+  background-color: light-dark(#006fbe, #168cff);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btn-doc.primary:hover {
+  background-color: light-dark(#0053a0, #0d72d6);
+}
+
+.historico-btn {
+  border: none;
+  border-radius: 9px;
+  padding: 10px 16px;
+  background: #168cff;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 10pt;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.historico-btn:hover {
+  background: #0068be;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .specialty-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px 12px;
+  }
+
+  .agendar-banner {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-and-main main {
+    margin-right: 0;
+  }
+
+  .documentos-painel {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .doc-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .doc-card:hover {
+    transform: none;
+  }
+
+  .doc-acoes {
+    justify-content: stretch;
+    gap: 8px;
+  }
+
+  .doc-acoes .btn-doc {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .agendar-banner {
+    flex-wrap: wrap;
+  }
+
+  .agendar-banner-detalhe {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialty-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 10px;
+  }
+}
+
+    
+/* MODAL / API POPOVER */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(10, 46, 84, 0.45);
+  background: light-dark(rgba(10, 46, 84, 0.45), rgba(2, 16, 31, 0.72));
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  /* Fechado: sem delay para fechar rápido */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease 0s, visibility 0s linear 0.25s;
+}
+
+.modal-overlay.aberto {
+  /* Aberto: espera 0.18s para o usuário ver o clique */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.28s ease 0.18s, visibility 0s linear 0.18s;
+}
+
+html:has(.modal-overlay.aberto),
+body:has(.modal-overlay.aberto) {
+  overflow: hidden;
+}
+
+.modal-box {
+  background-color: #f4f9ff;
+  background-color: light-dark(#f4f9ff, #0b2949);
+  color: #003566;
+  color: light-dark(#003566, #ffffff);
+  border: 1px solid #cce3fa;
+  border: light-dark(#cce3fa, #1c4978);
+  border-radius: 20px;
+  padding: 28px 32px 22px;
+  width: 580px;
+  max-width: 94vw;
+  max-height: 86dvh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* Estado fechado / saindo: sem delay e um pouco mais rápido */
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition:
+    opacity 0.2s ease 0s,
+    transform 0.22s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.modal-overlay.aberto .modal-box {
+  /* Entrando: mesmo atraso de 0.18s do fundo */
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition:
+    opacity 0.3s ease 0.18s,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.modal-titulo {
+  font-size: 18pt;
+  font-weight: 700;
+  color: #004aad;
+  color: light-dark(#004aad, #ffffff);
+  margin: 0 0 6px;
+  flex-shrink: 0;
+}
+
+.modal-titulo i {
+  color: #168cff;
+  color: light-dark(#168cff, #5cb2ff);
+}
+
+.modal-subtitulo {
+  font-size: 10pt;
+  font-weight: 500;
+  color: #3d6891;
+  color: light-dark(#3d6891, #9ccfff);
+  margin: 0 0 18px;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+/* GRID ROLÁVEL PARA N MEMBROS */
+.membros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 12px;
+  overflow-y: auto;
+  padding: 6px 4px 12px;
+  margin-bottom: 16px;
+  flex: 1;
+  min-height: 120px;
+}
+
+.membros-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.membros-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.membros-grid::-webkit-scrollbar-thumb {
+  background-color: #c2dcf7;
+  background-color: light-dark(#c2dcf7, #1e4b7a);
+  border-radius: 999px;
+}
+
+.membro-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  background-color: light-dark(#ffffff, #10355c);
+  border: 1px solid #d7e9fa;
+  border: 1px solid light-dark(#d7e9fa, #1d4978);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  user-select: none;
+}
+
+.membro-item:hover {
+  background-color: #f0f7ff;
+  background-color: light-dark(#f0f7ff, #164270);
+  border-color: #6ab5ff;
+  border-color: light-dark(#6ab5ff, #3b8ad6);
+  transform: translateY(-2px);
+}
+
+.membro-item:active {
+  transform: scale(0.97);
+}
+
+/* INTERAÇÃO FORTE E CLARA QUANDO SELECIONADO */
+.membro-item.selecionado {
+  background-color: #e3f2ff;
+  background-color: light-dark(#e3f2ff, #174b82);
+  border: 1.5px solid #168cff;
+  border: 1.5px solid light-dark(#168cff, #5cb2ff);
+  transform: translateY(-3px);
+}
+
+.membro-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #e6f2ff;
+  background-color: light-dark(#e6f2ff, #174370);
+  color: #0053a0;
+  color: light-dark(#0053a0, #9ccfff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #c7e2ff;
+  border: 2px solid light-dark(#c7e2ff, #2a6099);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.membro-avatar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  pointer-events: none;
+  transition: border-color 0.2s ease;
+}
+
+.membro-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.membro-avatar i {
+  color: inherit;
+  color: light-dark(inherit,#fff);
+}
+
+.membro-item:hover .membro-avatar {
+  border-color: #168cff;
+  border-color: light-dark(#168cff, #5cb2ff);
+}
+
+.membro-item.selecionado .membro-avatar {
+  background-color: #168cff;
+  background-color: light-dark(#168cff, #168cff);
+  border-color: #0068be;
+  border-color: light-dark(#0068be, #9ccfff);
+  color: #ffffff;
+  transform: scale(1.07);
+}
+
+.membro-item.selecionado .membro-avatar::before {
+  border-color: #ffffff;
+}
+
+.membro-nome,
+.membro-sobrenome {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.membro-nome {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #003566;
+  color: light-dark(#003566, #ffffff);
+  line-height: 1.3;
+}
+
+.membro-sobrenome {
+  font-size: 8.5pt;
+  font-weight: 600;
+  color: #4a769d;
+  color: light-dark(#4a769d, #9ccfff);
+  line-height: 1.3;
+}
+
+.membro-item:hover .membro-nome {
+  color: #004aad;
+  color: light-dark(#004aad, #c4f4f9);
+}
+
+.membro-item.selecionado .membro-nome {
+  color: #004aad;
+  color: light-dark(#004aad, #ffffff);
+}
+
+.membro-item.selecionado .membro-sobrenome {
+  color: #0068be;
+  color: light-dark(#0068be, #c4f4f9);
+}
+
+/* BOTÕES PRESERVADOS */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #dbeafe;
+  border-top: 1px solid light-dark(#dbeafe, #1e4b7a);
+  flex-shrink: 0;
+}
+
+.btn-cancelar-modal,
+.btn-continuar-modal {
+  padding: 9px 22px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 9.5pt;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-cancelar-modal {
+  background-color: #ffffff;
+  background-color: light-dark(#ffffff, #103254);
+  border: 1px solid #379dff;
+  border: 1px solid light-dark(#379dff, #4da6ff);
+  color: #006fbe;
+  color: light-dark(#006fbe, #9ccfff);
+}
+
+.btn-cancelar-modal:hover {
+  background-color: #e0f2fe;
+  background-color: light-dark(#e0f2fe, #194878);
+}
+
+.btn-continuar-modal {
+  background-color: #168cff;
+  background-color: light-dark(#168cff, #168cff);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.btn-continuar-modal:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-continuar-modal:not(:disabled):hover {
+  background-color: #0068be;
+  background-color: light-dark(#0068be, #0d72d6);
+}
+
+@media (max-width: 720px) {
+  .modal-box {
+    padding: 22px 18px 18px;
+    max-height: 90dvh;
+    border-radius: 16px;
+  }
+
+  .membros-grid {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 10px;
+  }
+
+  .membro-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-cancelar-modal,
+  .btn-continuar-modal {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+:root {
+  color-scheme: light dark;
+
+  --blue-dark: light-dark(#0f4fa8, #6ba8ff);
+  --blue: light-dark(#1f6fe0, #4d94ff);
+  --blue-mid: light-dark(#2e7ce6, #3b82f6);
+  --blue-topbar: light-dark(#cfe1f7, #162b47);
+  --blue-topbar-2: light-dark(#dceaf9, #1b3454);
+  --text-on-blue: #ffffff;
+  --text-muted-on-blue: light-dark(#bcd7f8, #9ec2ef);
+  --sidebar-width: 240px;
+  --page-bg: light-dark(#dfeafa, #0b1624);
+  --text-dark: light-dark(#1f3a5f, #e4effc);
+  --text-muted: light-dark(#7d93b3, #8fa6c7);
+  --border: light-dark(#e3ecf7, #223854);
+  --blue-light: light-dark(#eaf2fd, #14263d);
+
+  /* Superfícies específicas da seção de consulta */
+  --surface-subtle: light-dark(#eef5fd, #122238);
+  --surface-card: light-dark(#ffffff, #15273f);
+  --surface-highlight: light-dark(#c8ddf5, #1a3352);
+  --ubs-panel-bg: light-dark(#1a3a5c, #0e1d2e);
+  --ubs-card-bg: light-dark(#1f4b7a, #153352);
+  --ubs-card-hover: light-dark(#255880, #1c4269);
+  --ubs-accent: light-dark(#5ab4f0, #69beff);
+  --ubs-accent-hover: light-dark(#79c6f5, #89ccff);
+  --ubs-accent-text: light-dark(#0f2d4a, #081929);
+  --ubs-address-text: light-dark(#9bbfd9, #9ec0dc);
+  --confirm-card-bg: light-dark(#0f4fa8, #132d52);
+
+  /* Status */
+  --status-agendada: light-dark(#3fb96a, #4cd17c);
+  --status-processo: light-dark(#f0b429, #f5c249);
+  --status-cancelada: light-dark(#e0507a, #f06c92);
+  --status-pendente: light-dark(#3b8bea, #5ca1f5);
+}
+
+/* ── ACESSIBILIDADE DE FOCO ─────────────────────────── *
+.consulta-section :is(button, [role="button"], .ubs-card, .cal-dia):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ── STEPS HEADER ───────────────────────────────────── 
+.steps-header {
+  display: flex;
+  align-items: center;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px light-dark(rgba(15, 79, 168, 0.05), rgba(0, 0, 0, 0.25));
+}
+
+.step-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: default;
+  position: relative;
+  border-radius: 12px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.step-tab i {
+  font-size: 16px;
+}
+
+.step-tab.active {
+  color: var(--blue-dark);
+  border-bottom-color: var(--blue-dark);
+  background: var(--surface-card);
+  box-shadow: 0 2px 8px light-dark(rgba(15, 79, 168, 0.08), rgba(0, 0, 0, 0.2));
+}
+
+.step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  color: var(--text-on-blue);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.step-tab.active .step-num {
+  background: var(--blue-dark);
+}
+
+.step-tab.done .step-num {
+  background: var(--status-agendada);
+}
+
+.step-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+}
+
+
+.agendamento-wrapper {
+  width: 100%;
+}
+
+/* ── BARRA DE ETAPAS COM PROGRESSO E BOLINHA VERDE ──── *
+.steps-header {
+  --progress: 0;
+  --track-inset: 16.666%;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  background: light-dark(rgba(238, 245, 253, 0.72), rgba(18, 34, 56, 0.72));
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 12px 16px;
+  margin-bottom: 24px;
+}
+
+.steps-header::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: var(--track-inset);
+  right: var(--track-inset);
+  height: 4px;
+  border-radius: 999px;
+  background: light-dark(rgba(15, 79, 168, 0.14), rgba(107, 168, 255, 0.16));
+  z-index: 0;
+}
+
+.steps-header::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: var(--track-inset);
+  width: calc((100% - (var(--track-inset) * 2)) * var(--progress));
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--status-agendada), var(--blue));
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.steps-header[data-progress="1"] { --progress: 0; }
+.steps-header[data-progress="2"] { --progress: 0.5; }
+.steps-header[data-progress="3"] { --progress: 1; }
+
+.step-tab {
+  position: relative;
+  z-index: 2;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.step-tab:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.step-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 2.5px solid light-dark(#c9d8ec, #294364);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px light-dark(rgba(15, 79, 168, 0.08), rgba(0, 0, 0, 0.3));
+  transition: all 0.22s ease;
+}
+
+.step-check {
+  display: none;
+  font-size: 13px;
+}
+
+.step-tab.active {
+  color: var(--blue-dark);
+}
+
+.step-tab.active .step-dot {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: var(--text-on-blue);
+  transform: scale(1.08);
+  box-shadow: 0 0 0 5px light-dark(rgba(31, 111, 224, 0.16), rgba(107, 168, 255, 0.2));
+}
+
+.step-tab.done {
+  color: var(--text-dark);
+}
+
+.step-tab.done .step-dot {
+  background: var(--status-agendada);
+  border-color: var(--status-agendada);
+  color: var(--text-on-blue);
+  box-shadow: 0 0 0 4px light-dark(rgba(63, 185, 106, 0.2), rgba(76, 209, 124, 0.22));
+}
+
+.step-tab.done .step-num {
+  display: none;
+}
+
+.step-tab.done .step-check {
+  display: inline-block;
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-tab.active .step-label {
+  font-weight: 700;
+}
+
+/* ── CABEÇALHOS E PILLS DE UX DAS ETAPAS ────────────── *
+.ubs-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 18px 24px 14px;
+}
+
+.ubs-header-bar .ubs-section-title {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ubs-hint {
+  font-size: 12px;
+  color: var(--ubs-address-text);
+}
+
+.etapa-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.etapa-topo .agendar-titulo {
+  margin-bottom: 4px;
+}
+
+.etapa-subtitulo {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.selecao-pill {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border: 1px solid light-dark(rgba(31, 111, 224, 0.2), rgba(107, 168, 255, 0.25));
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.selecao-pill.completa {
+  background: light-dark(rgba(63, 185, 106, 0.16), rgba(76, 209, 124, 0.18));
+  color: light-dark(#1d7a3e, #7be6a0);
+  border-color: var(--status-agendada);
+}
+
+.horarios-card {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.horarios-header {
+  margin-bottom: 12px;
+}
+
+.bloco-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── CONFIRMAÇÃO E ALERTA ───────────────────────────── *
+.alerta-erro {
+  background: light-dark(#fee2e2, rgba(224, 80, 122, 0.16));
+  color: light-dark(#991b1b, #ff9ab6);
+  border: 1px solid light-dark(#fca5a5, rgba(240, 108, 146, 0.4));
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.confirmacao-banner {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.confirmacao-icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--blue-light);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.confirmacao-banner h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 4px;
+}
+
+.confirmacao-banner p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.btn-confirmar,
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-confirmar-final {
+  background: var(--status-agendada);
+  color: #ffffff;
+}
+
+.btn-confirmar-final:not(:disabled):hover {
+  background: light-dark(#32a159, #3bb868);
+}
+
+@media (max-width: 600px) {
+  .steps-header {
+    padding: 14px 8px 12px;
+  }
+
+  .steps-header::before,
+  .steps-header::after {
+    top: 28px;
+  }
+
+  .step-dot {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .step-label {
+    font-size: 11.5px;
+  }
+
+  .step-label i {
+    display: none;
+  }
+
+  .confirmacao-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+/* ── UBS GRID ───────────────────────────────────────── *
+.ubs-container {
+  background: var(--ubs-panel-bg);
+  border: 1px solid light-dark(transparent, rgba(105, 190, 255, 0.14));
+  border-radius: 18px;
+  overflow: hidden;
+  max-width: max-content;
+  /*box-shadow: 0 8px 24px light-dark(rgba(26, 58, 92, 0.14), rgba(0, 0, 0, 0.35));*
+}
+
+.ubs-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-on-blue);
+  padding: 18px 24px 14px;
+}
+
+.ubs-grid {
+  /*display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));*
+  display: flex;
+  gap: 16px;
+  padding: 0 24px 24px;
+}
+
+.ubs-card {
+  background: var(--ubs-card-bg);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+  position: relative;
+  width: 360px;
+  border: 1.5px solid #6cd3ff;
+}
+
+.ubs-card:hover {
+  background: var(--ubs-card-hover);
+  transform: translateY(-2px);
+}
+
+.ubs-card.selecionada {
+  border-color: var(--ubs-accent);
+  background: var(--ubs-card-hover);
+  box-shadow: 0 0 0 3px light-dark(rgba(90, 180, 240, 0.22), rgba(105, 190, 255, 0.18));
+}
+
+.ubs-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ubs-nome {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-on-blue);
+}
+
+.badge-proxima {
+  background: var(--ubs-accent);
+  color: var(--ubs-accent-text);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.35px;
+  white-space: nowrap;
+}
+
+.ubs-endereco {
+  font-size: 12px;
+  color: var(--ubs-address-text);
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+
+.ubs-distancia {
+  font-weight: 700;
+  color: var(--text-on-blue);
+}
+
+.ubs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-mapa {
+  background: transparent;
+  border: 1px solid var(--ubs-accent);
+  color: var(--ubs-accent);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-mapa:hover {
+  background: light-dark(rgba(90, 180, 240, 0.14), rgba(105, 190, 255, 0.16));
+}
+
+.btn-confirmar-ubs {
+  background: var(--ubs-accent);
+  border: none;
+  color: var(--ubs-accent-text);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.btn-confirmar-ubs:hover {
+  background: var(--ubs-accent-hover);
+}
+
+.btn-confirmar-ubs:active {
+  transform: scale(0.98);
+}
+
+/* ── ETAPA 2: AGENDAR ───────────────────────────────── *
+.agendar-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.agendar-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.agendar-titulo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 18px;
+}
+
+.ubs-detalhe {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.ubs-foto {
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--surface-highlight);
+}
+
+.ubs-info-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.ubs-info-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.ubs-info-val {
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.ubs-info-val:last-child {
+  margin-bottom: 0;
+}
+
+.horarios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-horario {
+  background: var(--surface-card);
+  border: 2px solid var(--border);
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+
+.btn-horario:hover {
+  border-color: var(--blue);
+  background: var(--blue-light);
+}
+
+.btn-horario.selecionado {
+  background: var(--blue-dark);
+  color: var(--text-on-blue);
+  border-color: var(--blue-dark);
+}
+
+/* ── CALENDÁRIO ─────────────────────────────────────── *
+.calendario-box {
+  width: 270px;
+  flex-shrink: 0;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cal-header button {
+  background: transparent;
+  border: none;
+  color: var(--blue-dark);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.cal-header button:hover {
+  background: var(--blue-light);
+}
+
+#cal-mes-ano {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.cal-dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cal-dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-dia {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.cal-dia:hover:not(.vazio):not(.passado) {
+  background: var(--blue-light);
+}
+
+.cal-dia.passado {
+  color: var(--text-muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cal-dia.vazio {
+  cursor: default;
+}
+
+.cal-dia.hoje {
+  font-weight: 700;
+  color: var(--blue);
+  box-shadow: inset 0 0 0 1.5px var(--blue);
+}
+
+.cal-dia.selecionado {
+  background: var(--blue-dark);
+  color: var(--text-on-blue);
+  font-weight: 700;
+  box-shadow: none;
+}
+
+/* ── STEP ACTIONS ───────────────────────────────────── *
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-voltar {
+  background: transparent;
+  border: 2px solid var(--blue-dark);
+  color: var(--blue-dark);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease;
+}
+
+.btn-voltar:hover {
+  background: var(--blue-light);
+}
+
+.btn-confirmar {
+  background: var(--blue-dark);
+  color: var(--text-on-blue);
+  border: none;
+  padding: 11px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease, transform 0.12s ease;
+}
+
+.btn-confirmar:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-confirmar:not(:disabled):hover {
+  background: var(--blue);
+}
+
+.btn-confirmar:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+/* ── ETAPA 3: CONFIRMAÇÃO ───────────────────────────── *
+.confirmacao-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.confirmacao-sucesso {
+  background: var(--surface-highlight);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+}
+
+.confirmacao-sucesso h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 10px;
+}
+
+.confirmacao-sucesso h2 i {
+  color: var(--status-agendada);
+}
+
+.confirmacao-sucesso p {
+  font-size: 13px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.confirmacao-bottom {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.confirmacao-detalhes {
+  flex: 1;
+  min-width: 0;
+  background: var(--confirm-card-bg);
+  border-radius: 16px;
+  padding: 22px 24px;
+  color: var(--text-on-blue);
+  box-shadow: 0 6px 20px light-dark(rgba(15, 79, 168, 0.18), rgba(0, 0, 0, 0.35));
+}
+
+.confirmacao-detalhes h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detalhe-item {
+  border-top: 1px solid light-dark(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.12));
+  padding: 11px 0;
+}
+
+.detalhe-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted-on-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+  margin-bottom: 3px;
+}
+
+.detalhe-valor {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-on-blue);
+}
+
+.proximos-passos {
+  width: 250px;
+  flex-shrink: 0;
+  background: var(--surface-highlight);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.proximos-passos h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.proximos-passos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proximos-passos li {
+  font-size: 12px;
+  color: var(--text-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.proximos-passos li i {
+  color: var(--status-agendada);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ── ETAPA VISIBILIDADE & RESPONSIVIDADE ────────────── *
+.etapa {
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .agendar-layout,
+  .confirmacao-bottom {
+    flex-direction: column;
+  }
+
+  .calendario-box,
+  .proximos-passos {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .ubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ubs-detalhe {
+    flex-direction: column;
+  }
+
+  .ubs-foto {
+    width: 100%;
+    height: 150px;
+  }
+
+  .step-tab {
+    font-size: 12px;
+    padding: 12px 8px;
+    gap: 6px;
+  }
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   TELA DE AGENDAMENTO
+======================================== */
+
+.agendamento-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 10px 25px 35px;
+  box-sizing: border-box;
+  color: light-dark(#17416f, #eef6ff);
+}
+
+
+/* ========================================
+   BARRA DE ETAPAS
+======================================== */
+
+.steps-header {
+  width: 100%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 12px;
+}
+
+.steps-header::before,
+.steps-header::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: 19px;
+  left: 12.5%;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.steps-header::before {
+  width: 75%;
+  background: light-dark(#dceafa, #315c87);
+}
+
+.steps-header::after {
+  background: #168cff;
+  transition: width .4s ease;
+}
+
+.steps-header[data-progress="1"]::after {
+  width: 0%;
+}
+
+.steps-header[data-progress="2"]::after {
+  width: 25%;
+}
+
+.steps-header[data-progress="3"]::after {
+  width: 50%;
+}
+
+.steps-header[data-progress="4"]::after {
+  width: 75%;
+}
+
+.step-tab {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: light-dark(#8da5bf, #8ba9c9);
+  position: relative;
+  transition: color .3s ease;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: light-dark(#edf4fc, #173e68);
+  border: 3px solid light-dark(#d5e4f5, #315c87);
+  color: light-dark(#7892ad, #a8c4e2);
+  font-size: 14px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.step-tab.active {
+  color: #168cff;
+}
+
+.step-tab.active .step-number {
+  background: #168cff;
+  border-color: #168cff;
+  color: white;
+  box-shadow: 0 0 0 5px #168cff20;
+}
+
+.step-tab.done {
+  color: light-dark(#176fc1, #83c5ff);
+}
+
+.step-tab.done .step-number {
+  background: #168cff;
+  border-color: #168cff;
+  color: white;
+}
+
+
+/* ========================================
+   ESTRUTURA DAS ETAPAS
+======================================== */
+
+.etapa {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: aparecer-etapa .35s ease;
+}
+
+@keyframes aparecer-etapa {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   TÍTULOS DO TOPO
+======================================== */
+
+.etapa-topo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.agendar-titulo {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 750;
+  color: light-dark(#164d85, #ffffff);
+  line-height: 1.4;
+}
+
+.etapa-subtitulo {
+  margin: 7px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: light-dark(#6c86a2, #b2c9e2);
+}
+
+.selecao-pill {
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: light-dark(#e6f3ff, #153f6d);
+  color: light-dark(#176fc1, #a9d6ff);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   ETAPA 1 - UBS
+======================================== */
+
+.ubs-container {
+  width: 100%;
+  padding: 22px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: light-dark(#f5faff, #123d6b);
+  border: 1px solid light-dark(#dceafa, #285887);
+}
+
+.ubs-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ubs-section-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: light-dark(#245b91, #e2f1ff);
+}
+
+.ubs-section-title i {
+  color: #168cff;
+  font-size: 17px;
+}
+
+.ubs-hint {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: light-dark(#8199b2, #a4bfdc);
+}
+
+.ubs-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+/* Cartões gerados pelo JS */
+.ubs-grid > * {
+  min-width: 0;
+}
+
+
+/* ========================================
+   ETAPA 2 - LAYOUT DE AGENDAMENTO
+======================================== */
+
+.agendar-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 22px;
+  align-items: start;
+}
+
+.agendar-left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* ========================================
+   DETALHES DA UBS
+======================================== */
+
+.ubs-detalhe {
+  width: 100%;
+  min-width: 0;
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: light-dark(#f4f9ff, #123d6b);
+  border: 1px solid light-dark(#dceafa, #285887);
+}
+
+
+/* ========================================
+   CALENDÁRIO
+======================================== */
+
+.calendario-box {
+  width: 100%;
+  max-width: 310px;
+  padding: 17px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: light-dark(#ffffff, #123d6b);
+  border: 1px solid light-dark(#dceafa, #285887);
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.cal-header span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 750;
+  color: light-dark(#20578c, #ffffff);
+  text-align: center;
+}
+
+.cal-header button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 9px;
+  background: light-dark(#eaf4ff, #1b4c7d);
+  color: #168cff;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.cal-header button:hover {
+  background: #168cff;
+  color: white;
+}
+
+.cal-dias-semana,
+.cal-dias {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+  text-align: center;
+}
+
+.cal-dias-semana {
+  margin-bottom: 9px;
+}
+
+.cal-dias-semana span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: light-dark(#829bb5, #a9c3df);
+}
+
+.cal-dias {
+  row-gap: 6px;
+}
+
+.cal-dias > * {
+  min-width: 0;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   HORÁRIOS DISPONÍVEIS
+======================================== */
+
+.horarios-card {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: light-dark(#f4f9ff, #123d6b);
+  border: 1px solid light-dark(#dceafa, #285887);
+}
+
+.horarios-header {
+  margin-bottom: 17px;
+}
+
+.bloco-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 750;
+  color: light-dark(#245b91, #ffffff);
+}
+
+.bloco-label i {
+  color: #168cff;
+  font-size: 17px;
+}
+
+.horarios-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 10px;
+}
+
+.horarios-lista > * {
+  min-width: 0;
+}
+
+.horarios-vazio {
+  grid-column: 1 / -1;
+  padding: 28px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  border-radius: 12px;
+  background: light-dark(#eaf4ff, #174773);
+  color: light-dark(#7893ad, #b1c9e1);
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+
+.horarios-vazio i {
+  font-size: 24px;
+  color: #168cff;
+}
+
+.horarios-vazio p {
+  margin: 0;
+}
+
+
+/* ========================================
+   ETAPA 3 - CONFIRMAÇÃO
+======================================== */
+
+.confirmacao-box {
+  width: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  background: light-dark(#f6faff, #123d6b);
+  border: 1px solid light-dark(#dceafa, #285887);
+}
+
+.confirmacao-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.confirmacao-icone {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #168cff18;
+  color: #168cff;
+  font-size: 23px;
+}
+
+.confirmacao-banner h2 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-weight: 750;
+  color: light-dark(#174d80, #ffffff);
+}
+
+.confirmacao-banner p {
+  margin: 6px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: light-dark(#7890a9, #b1c9e1);
+}
+
+.confirmacao-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 22px;
+  align-items: start;
+}
+
+.confirmacao-detalhes {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.proximos-passos {
+  padding: 18px;
+  border-radius: 16px;
+  background: light-dark(#eaf4ff, #174773);
+  border: 1px solid light-dark(#d7eaff, #285887);
+}
+
+.proximos-passos h4 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 17px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 750;
+  color: light-dark(#245b91, #ffffff);
+}
+
+.proximos-passos h4 i {
+  color: #168cff;
+  font-size: 17px;
+}
+
+.proximos-passos ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.proximos-passos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  color: light-dark(#58738e, #c0d5e9);
+}
+
+.proximos-passos li i {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #168cff;
+}
+
+
+/* ========================================
+   MENSAGEM DE ERRO
+======================================== */
+
+.alerta-erro {
+  width: 100%;
+  padding: 14px 17px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: light-dark(#fff0f0, #542b36);
+  border: 1px solid light-dark(#ffcaca, #9c5260);
+  color: light-dark(#b52e3b, #ffc2c9);
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+
+
+/* ========================================
+   BOTÕES DE NAVEGAÇÃO
+======================================== */
+
+.step-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.btn-voltar,
+.btn-confirmar {
+  min-height: 45px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.btn-voltar {
+  background: light-dark(#edf5ff, #173f69);
+  border: 1px solid light-dark(#d4e5f7, #315b83);
+  color: light-dark(#547795, #c2d8ed);
+}
+
+.btn-voltar:hover {
+  background: light-dark(#dceeff, #205486);
+}
+
+.btn-confirmar {
+  background: #168cff;
+  border: 1px solid #168cff;
+  color: white;
+}
+
+.btn-confirmar:hover:not(:disabled) {
+  background: #0876df;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px #168cff35;
+}
+
+.btn-confirmar:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.btn-confirmar-final {
+  background: #0878d5;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .agendar-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+
+  .confirmacao-bottom {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .agendamento-wrapper {
+    padding: 10px 12px 25px;
+    gap: 22px;
+  }
+
+  .steps-header {
+    max-width: 100%;
+  }
+
+  .step-tab {
+    font-size: 9px;
+    gap: 7px;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+    border-width: 2px;
+  }
+
+  .steps-header::before,
+  .steps-header::after {
+    top: 15px;
+    height: 3px;
+  }
+
+  .etapa-topo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .agendar-titulo {
+    font-size: 18px;
+  }
+
+  .etapa-subtitulo {
+    font-size: 11px;
+  }
+
+  .selecao-pill {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+
+  .ubs-container {
+    padding: 15px;
+  }
+
+  .ubs-header-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .agendar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .calendario-box {
+    max-width: 100%;
+    grid-row: 1;
+  }
+
+  .agendar-left {
+    grid-row: 2;
+  }
+
+  .cal-dias {
+    gap: 7px;
+  }
+
+  .cal-dias > * {
+    min-height: 38px;
+  }
+
+  .confirmacao-box {
+    padding: 17px;
+  }
+
+  .confirmacao-banner {
+    align-items: flex-start;
+  }
+
+  .confirmacao-banner h2 {
+    font-size: 16px;
+  }
+
+  .step-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .step-actions button {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .step-tab {
+    font-size: 8px;
+  }
+
+  .step-number {
+    width: 29px;
+    height: 29px;
+  }
+
+  .cal-dias > * {
+    min-height: 32px;
+  }
+
+  .horarios-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+.steps-header[data-progress="1"]::after {
+  width: 0%;
+}
+
+.steps-header[data-progress="2"]::after {
+  width: 25%;
+}
+
+.steps-header[data-progress="3"]::after {
+  width: 50%;
+}
+
+.steps-header[data-progress="4"]::after {
+  width: 75%;
+}
+
+
+
+/* ========================================
+   ELEMENTOS DINÂMICOS — UBS
+======================================== */
+
+.ubs-card {
+  min-width: 0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  border-radius: 16px;
+  background: light-dark(#ffffff, #174773);
+  border: 1px solid light-dark(#dceafa, #315c87);
+  transition: .25s ease;
+}
+
+.ubs-card:hover {
+  border-color: #168cff;
+  transform: translateY(-2px);
+}
+
+.ubs-card.selecionada {
+  border: 2px solid #168cff;
+  background: light-dark(#edf7ff, #1a4d7d);
+  box-shadow: 0 0 0 3px #168cff20;
+}
+
+.ubs-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ubs-nome {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 750;
+  color: light-dark(#174d80, #ffffff);
+}
+
+.ubs-endereco {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  color: light-dark(#7890a9, #b1c9e1);
+}
+
+.badge-proxima {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border-radius: 20px;
+  background: #168cff18;
+  color: #168cff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.ubs-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-mapa,
+.btn-confirmar-ubs {
+  min-width: 0;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.btn-mapa {
+  flex: 1;
+  background: light-dark(#edf5ff, #1c4c79);
+  border: 1px solid light-dark(#d4e5f7, #315b83);
+  color: light-dark(#3976ac, #c2d8ed);
+}
+
+.btn-confirmar-ubs {
+  flex: 1;
+  background: #168cff;
+  border: 1px solid #168cff;
+  color: white;
+}
+
+.btn-mapa:hover,
+.btn-confirmar-ubs:hover {
+  filter: brightness(.95);
+}
+
+
+/* ========================================
+   DETALHES DA UBS
+======================================== */
+
+.ubs-foto {
+  width: 100%;
+  min-height: 110px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.ubs-info-titulo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 750;
+  color: light-dark(#174d80, #ffffff);
+  margin-bottom: 12px;
+}
+
+.ubs-info-label,
+.detalhe-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: light-dark(#8299b2, #9eb9d5);
+  margin-bottom: 4px;
+}
+
+.ubs-info-val {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: light-dark(#456985, #d0e2f3);
+  margin-bottom: 12px;
+}
+
+
+/* ========================================
+   HORÁRIOS
+======================================== */
+
+.btn-horario {
+  min-height: 40px;
+  border-radius: 10px;
+  border: 1px solid light-dark(#d6e7f8, #315c87);
+  background: light-dark(#ffffff, #174773);
+  color: light-dark(#3976ac, #c2d8ed);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.btn-horario:hover {
+  border-color: #168cff;
+  color: #168cff;
+}
+
+.btn-horario.selecionado {
+  background: #168cff;
+  border-color: #168cff;
+  color: white;
+}
+
+
+/* ========================================
+   CALENDÁRIO
+======================================== */
+
+.cal-dia {
+  cursor: pointer;
+  background: light-dark(#f0f6fd, #174773);
+  color: light-dark(#426b91, #d0e2f3);
+  transition: .2s ease;
+}
+
+.cal-dia:not(.passado):not(.vazio):hover {
+  background: #168cff20;
+  color: #168cff;
+}
+
+.cal-dia.hoje {
+  border: 1px solid #168cff;
+  color: #168cff;
+}
+
+.cal-dia.passado {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.cal-dia.selecionado {
+  background: #168cff;
+  color: white;
+  border: 1px solid #168cff;
+}
+
+.cal-dia.vazio {
+  background: transparent;
+}
+
+
+/* ========================================
+   DETALHES DA CONFIRMAÇÃO
+======================================== */
+
+.detalhe-item {
+  padding: 12px 14px;
+  border-radius: 11px;
+  background: light-dark(#ffffff, #174773);
+  border: 1px solid light-dark(#e0ecf8, #285887);
+}
+
+.detalhe-valor {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: light-dark(#245b91, #ffffff);
+}
+
+
+/* ========================================
+   MENSAGEM DE SUCESSO
+======================================== */
+
+.confirmacao-sucesso {
+  padding: 20px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  background: light-dark(#e9f8ef, #174b43);
+  border: 1px solid light-dark(#bce8cc, #28765f);
+}
+
+.confirmacao-sucesso h2 {
+  margin: 0 0 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  color: light-dark(#207448, #a8efc5);
+}
+
+.confirmacao-sucesso h2 i {
+  color: #27ae60;
+}
+
+.confirmacao-sucesso p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  color: light-dark(#527b63, #c1e8d1);
+}
+
+
+/* ========================================
+   RESPONSIVIDADE DOS CARTÕES
+======================================== */
+
+@media (max-width: 650px) {
+  .ubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ubs-actions {
+    flex-wrap: wrap;
+  }
+}

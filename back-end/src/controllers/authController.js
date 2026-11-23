@@ -3,35 +3,86 @@ const UserModel = require('../models/userModel');
 class AuthController {
 
   // ── LOGIN ─────────────────────────────────────────────────────────────────
-  static async login(req, res) {
-    try {
-      const { cpf, senha } = req.body;
+static login(req, res) {
+  const { cpf, senha } = req.body;
 
-      if (!cpf || !senha) {
-        return res.status(400).json({ erro: 'CPF e senha são obrigatórios.' });
-      }
+  if (!cpf || !senha) {
+    return res.status(400).json({
+      erro: 'CPF e senha são obrigatórios.'
+    });
+  }
 
-      const cpfLimpo = cpf.replace(/\D/g, '');
-      const usuario = await UserModel.findByCpf(cpfLimpo);
+  const cpfLimpo = cpf.replace(/\D/g, '');
+
+  UserModel.findByCpf(cpfLimpo)
+    .then(async (usuario) => {
 
       if (!usuario) {
-        return res.status(401).json({ erro: 'CPF ou senha incorretos.' });
+        return res.status(401).json({
+          erro: 'CPF ou senha incorretos.'
+        });
       }
 
-      const senhaOk = await UserModel.verifyPassword(senha, usuario.senha);
-      if (!senhaOk) {
-        return res.status(401).json({ erro: 'CPF ou senha incorretos.' });
+      const senhaCorreta = await UserModel.verifyPassword(
+        senha,
+        usuario.senha
+      );
+
+      if (!senhaCorreta) {
+        return res.status(401).json({
+          erro: 'CPF ou senha incorretos.'
+        });
       }
 
-      req.session.usuario = { id: usuario.id, nome: usuario.nome, cpf: usuario.cpf };
+      // CPF E SENHA estão corretos.
+      // Agora criamos a autenticação.
+      req.session.regenerate((erroRegenerate) => {
 
-      return res.status(200).json({ sucesso: true, nome: usuario.nome });
+        if (erroRegenerate) {
+          console.error(erroRegenerate);
 
-    } catch (err) {
-      console.error('[login]', err);
-      return res.status(500).json({ erro: 'Erro interno no servidor.' });
-    }
-  }
+          return res.status(500).json({
+            erro: 'Erro ao iniciar sessão.'
+          });
+        }
+
+        req.session.usuario = {
+          id: usuario.id,
+          nome: usuario.nome,
+          cpf: usuario.cpf
+        };
+
+        req.session.save((erroSave) => {
+
+          if (erroSave) {
+            console.error(erroSave);
+
+            return res.status(500).json({
+              erro: 'Erro ao salvar sessão.'
+            });
+          }
+
+          return res.status(200).json({
+            sucesso: true,
+            usuario: {
+              id: usuario.id,
+              nome: usuario.nome,
+              cpf: usuario.cpf
+            }
+          });
+
+        });
+      });
+
+    })
+    .catch((erro) => {
+      console.error('[login]', erro);
+
+      return res.status(500).json({
+        erro: 'Erro interno no servidor.'
+      });
+    });
+}
 
   // ── CADASTRO ETAPA 1 — valida CPF + e-mail ───────────────────────────────
   // Não grava no banco ainda. Retorna OK para o JS redirecionar ao cadastro2.

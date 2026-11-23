@@ -1,0 +1,513 @@
+.header-and-main main{
+  
+  .content-placeholder{
+    flex:1;
+    padding:32px;
+    
+  .membros{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+  }
+
+  .card{
+    flex-shrink: 0;
+    position: relative;
+    width: 244px;
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #6cd3ff25;
+    background: light-dark(rgba(108, 211, 255, 0.15), rgba(7, 56, 117, 0.3));
+    border: 1.5px solid #1badff;
+    border-color: light-dark(#1badff, #008cff);
+    border-radius: 15px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .card:hover{
+    transform:scale(1.03);
+  }
+
+  .menu-pontos{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:24px;
+    height:24px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+    
+    .menu-pontos{
+      margin-top: 19px;
+      margin-right: 8px;
+      width: 5.8px;
+      height: 23px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 49;
+      
+      div{
+        display: block;
+        width: 5.8px;
+        height: 5.8px;
+        background-color: #0053a0;
+        background-color: light-dark(#0053a0, #85c7ff);
+        border-radius: 50%;
+      }
+    }
+
+  .avatar{
+    position:relative;
+    margin:0 auto;
+    width: 127.3px;
+    height: 127.3px;
+    border: 2.5px solid #399eff;
+    border-color: light-dark(#399eff, #85c7ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar img,
+  .avatar-padrao{
+    width: 112.6px;
+    height: 112.6px;
+    border-radius:50%;
+    background:#f5f5f5;
+    background: light-dark(#f5f5f5, #081f4c);
+    object-fit:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i{
+      color: #168cff;
+      color: light-dark(#168cff,#34a4ff);
+    }
+    
+  }
+
+  .avatar .camera-back{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 38.1px;
+    height: 38.1px;
+    background: #eef6ff;
+    background: light-dark(#eef6ff, #174a83);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+    .camera{
+      width: 31.4px;
+      height: 31.4px;
+      background: #57b9ff;
+      background: light-dark(#57b9ff, #008cff);
+      border-radius:50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      svg{
+        width: 21x;
+        height: 21px;
+        fill: #fff;
+        fill: light-dark(#ffffff, #c4f4f9);
+      
+      }
+    }
+  }
+
+  /*.avatar .camera svg{
+    width:13px;
+    height:13px;
+    fill:#fff;
+  }*/
+
+  .card h3{
+    margin-top: 5px;
+    color: #0053a0;
+    color: light-dark(#0053a0, #9ccfff);
+    font-size: 16px;
+  }
+
+  .card .selo{
+    display: inline-block;
+    width: 93.2px;
+    height: 22.9px;
+    margin-top: 5px;
+    background: #379dff;
+    background: light-dark(#379dff, #004aad);
+    color: #d4fcff;
+    color: light-dark(#d4fcff, #c4f4f9);
+    padding-block: 4px;
+    border-radius:30px;
+    font-size: 9.3pt;
+    text-transform:uppercase;
+    font-weight: 500;
+  }
+
+ /*.card .selo-titular{
+    
+  }*/
+
+  /* CARTÃO ADICIONAR MEMBRO */
+
+  .card.adicionar{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:transparent;
+    border-style: dashed;
+    color:#2f80ed;
+    color: light-dark(#2f80ed, #57a4ff);
+    
+    .item{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  .card.adicionar .mais-bg{
+    width: 112.5px;
+    height: 112.5px;
+    border-radius: 200px;
+    background: #a1d1ff;
+    background: light-dark(#a1d1ff, #073875);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: relative;
+    
+    &::before{
+      content: " ";
+      position: absolute;
+      insert: 0;
+      width: 127.3px;
+      height: 127.3px;
+      background-color: transparent;
+      border: 2.5px dashed #399eff;
+      border-color: light-dark(#399eff, #85c7ff);
+      border-radius: inherit;
+    }
+  }
+    
+  .mais-bg > *{
+    position: absolute;
+  }  
+    
+
+  .mais-bg div{
+    width: 14px;
+    height: 80px;
+    background-color: #3088db;
+    background-color: light-dark(#3088db, #34a4ff);
+    border-radius: 100px;
+    
+    &:last-child{
+      transform: rotate(90deg);
+    }
+  }
+
+  .card.adicionar p{
+    color: #71bbff;
+    color: light-dark(#71bbff, #9ccfff);
+    font-weight: 600;
+    font-size: 10pt;
+    text-transform:uppercase;
+    text-align:center;
+  }
+
+
+  }
+
+  .card.adicionar {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card.adicionar .mais-bg {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Mouse no desktop */
+@media (hover: hover) and (pointer: fine) {
+  .card.adicionar:hover {
+    background-color: light-dark(#dceeff, #1e5799);
+    border-color: light-dark(#007ad2, #85c7ff);
+  }
+
+  .card.adicionar:hover .mais-bg {
+    transform: scale(1.08);
+  }
+}
+
+/* Clique no mouse e toque no celular (efeito direto no ícone) */
+.card.adicionar:active .mais-bg {
+  transform: scale(0.88);
+  transition-duration: 0.08s;
+}
+  
+
+
+/* Garante que o botão seja a referência de posição do tooltip */
+.card .menu-pontos {
+  position: absolute; /* ou relative, caso já não tenha position definido */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card .menu-pontos::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px); /* Aparece acima dos 3 pontinhos */
+    right: 0;                 /* Alinhado à direita para não vazar fora do card */
+    left: -12px;
+    transform: translateY(4px);
+    width: max-content;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #004aad;
+    background: light-dark(#004aad, #a0d4ff);
+    color: #fff;
+    color: light-dark(#fff, #051e4f);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  }
+
+  .card .menu-pontos:hover::after,
+  .card .menu-pontos:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+
+.card:has(.menu-pontos:hover),
+.card:has(.menu-pontos:focus-visible) {
+  z-index: 99;
+}
+
+
+  /* ============ MODAL ============ */
+
+  .modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+  }
+
+  .janela{
+    width:90%;
+    max-width:1020px;
+    background:#dceefb;
+    border-radius:20px;
+    padding:40px 50px 45px;
+    position:relative;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+  }
+
+  .fechar{
+    position:absolute;
+    top:-20px;
+    right:-20px;
+    width:42px;
+    height:42px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    line-height:1;
+    color:#555;
+    cursor:pointer;
+    box-shadow:0 2px 10px rgba(0,0,0,.25);
+  }
+
+  .selo-modal{
+    display:inline-block;
+    background:#3399ff;
+    color:#fff;
+    padding:6px 20px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+  }
+
+  .moldura{
+    border:2px solid #8a5cf6;
+    border-radius:16px;
+    padding:35px 40px;
+    display:flex;
+    align-items:center;
+    gap:55px;
+  }
+
+  .esquerda{
+    width:200px;
+    text-align:center;
+    flex-shrink:0;
+  }
+
+  .avatar-modal{
+    width:170px;
+    height:170px;
+    margin:0 auto;
+  }
+
+  .avatar-modal img,
+  .avatar-modal .avatar-padrao{
+    width:170px;
+    height:170px;
+    border:4px solid #3399ff;
+  }
+
+  .avatar-modal .camera{
+    width:34px;
+    height:34px;
+    border-width:3px;
+  }
+
+  .avatar-modal .camera svg{
+    width:16px;
+    height:16px;
+  }
+
+  .esquerda h2{
+    margin-top:20px;
+    color:#004b91;
+    font-size:20px;
+  }
+
+  .direita{
+    flex:1;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .linha{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:20px;
+  }
+
+  .direita .linha:last-child{
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .campo{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:0;
+  }
+
+  .campo label{
+    font-size:12px;
+    color:#2f5b8a;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+  }
+
+  .campo input{
+    width:100%;
+    min-width:0;
+    padding:12px 14px;
+    border:1px solid #3399ff;
+    border-radius:8px;
+    background:#fff;
+    color:#333;
+    font-size:15px;
+  }
+
+  .campo select{
+    width:100%;
+    min-width:0;
+    padding:12px 14px;
+    border:1px solid #3399ff;
+    border-radius:8px;
+    background:#fff;
+    color:#333;
+    font-size:15px;
+    font-family:inherit;
+    cursor:pointer;
+  }
+
+  .campo input::placeholder{
+    color:#9fb3cc;
+  }
+
+  .botoes{
+    display:flex;
+    justify-content:flex-end;
+    gap:20px;
+    margin-top:30px;
+  }
+
+  .excluir{
+    width:140px;
+    height:45px;
+    border:none;
+    border-radius:30px;
+    background:#ff5a5a;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+  }
+
+  .editar{
+    width:140px;
+    height:45px;
+    border:none;
+    border-radius:30px;
+    background:black;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+  }
+
+
+}
