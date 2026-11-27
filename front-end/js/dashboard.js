@@ -1,74 +1,82 @@
-async function verificarAutenticacao() {
-    try {
-        const resposta = await fetch('/api/perfil', {
-            method: 'GET',
-            credentials: 'include'
-        });
+  document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('hygeiaCarousel');
+  const track = document.getElementById('carouselTrack');
+  const slides = Array.from(track.children);
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const dots = Array.from(document.querySelectorAll('.dot'));
 
-        const dados = await resposta.json();
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let autoplayTimer = null;
 
-        console.log('AUTENTICAÇÃO:', resposta.status, dados);
-
-        if (!resposta.ok) {
-            window.location.href = '/html/index2.html';
-            return null;
-        }
-
-        return dados;
-
-    } catch (erro) {
-        console.error('Erro ao verificar autenticação:', erro);
-
-        window.location.href = '/html/index2.html';
-        return null;
+  function goToSlide(index) {
+    if (index < 0) {
+      currentIndex = totalSlides - 1;
+    } else if (index >= totalSlides) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
     }
-}
 
-verificarAutenticacao()
+    // Move a faixa de slides
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-
-async function iniciarDashboard() {
-    const autenticado = await verificarAutenticacao();
-
-    if (!autenticado) return;
-
-    const track = document.getElementById('track');
-    const slides = track.querySelectorAll('.slide');
-
-    const dotsWrap = document.getElementById('dots');
-    const prevBtn = document.querySelector('.carousel-arrow.prev');
-    const nextBtn = document.querySelector('.carousel-arrow.next');
-
-    let current = 0;
-
-    slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-
-        if (i === 0) {
-            dot.classList.add('active');
-        }
-
-        dot.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(dot);
+    // Atualiza os marcadores ativos
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
     });
+  }
 
-    function update() {
-        track.style.transform = `translateX(-${current * 100}%)`;
+  // Eventos das setas
+  btnPrev.addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+    resetAutoplay();
+  });
 
-        [...dotsWrap.children].forEach((d, i) =>
-            d.classList.toggle('active', i === current)
-        );
+  btnNext.addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+    resetAutoplay();
+  });
+
+  // Eventos dos marcadores
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const targetIndex = Number(dot.dataset.index);
+      goToSlide(targetIndex);
+      resetAutoplay();
+    });
+  });
+
+  // Navegação por toque (Swipe no celular)
+  let touchStartX = 0;
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? goToSlide(currentIndex + 1) : goToSlide(currentIndex - 1);
+      resetAutoplay();
     }
+  }, { passive: true });
 
-    function goTo(i) {
-        current = (i + slides.length) % slides.length;
-        update();
-    }
+  // Troca automática (pausa ao passar o mouse)
+  function startAutoplay() {
+    autoplayTimer = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 15000);
+  }
 
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn.addEventListener('click', () => goTo(current + 1));
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
 
-    setInterval(() => goTo(current + 1), 6000);
-}
+  carousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  carousel.addEventListener('mouseleave', startAutoplay);
 
-iniciarDashboard();
+  startAutoplay();
+});

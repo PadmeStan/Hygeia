@@ -4,7 +4,9 @@ CREATE DATABASE IF NOT EXISTS hygeia_db
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
+
 USE hygeia_db;
+
 
 CREATE TABLE IF NOT EXISTS usuarios (
   id              INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,51 +26,38 @@ CREATE TABLE IF NOT EXISTS usuarios (
   criado_em       DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+
 CREATE TABLE ubs (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(150) NOT NULL
 );
 
+
 INSERT INTO ubs (nome) VALUES
-('Unidade básica de são José dos índios'),
-('Unidade básica de saúde do parque Aracagy'),
-('Unidade básica Dr. Raimundo Balbino'),
-('Unidade básica de saúde do turiúba'),
-('Unidade básica da vila cafeteira'),
-('Unidade básica de saúde nova aurora'),
-('Unidade básica de saúde do nova terra'),
-('Unidade básica de saúde do recanto verde'),
-('Unidade básica de saúde da Sarney filho II'),
-('Unidade básica de saúde do pitangueiras'),
-('Unidade básica de saúde do são Raimundo'),
-('Unidade básica de saúde do parque vitoria'),
-('Unidade básica de saúde do pindaí'),
-('Unidade básica de saúde do jardim tropical II'),
-('Unidade básica da matinha'),
-('Unidade básica de saúde do cohatrac V'),
-('Unidade básica de saúde do parque jair'),
-('Unidade básica alonso costa'),
-('Unidade básica de saúde da vila operaria'),
-('Unidade básica de saúde do jussatuba'),
-('Unidade básica de saúde da mata (D. José F. Machado)'),
-('Unidade básica de saúde da quinta'),
-('Unidade básica de saúde trizidela da maioba'),
-('Unidade básica de saúde da maiobinha'),
-('Unidade básica de saúde Guarapiranga'),
-('Unidade básica de saúde vila flamengo'),
-('Unidade básica de saúde da vila são luis'),
-('Unidade básica de saúde do bom jardim'),
-('Unidade básica de saúde do panaquatira'),
-('Unidade básica de saúde vila sarney filho'),
-('Unidade básica de saúde do olho dagua'),
-('Unidade básica de saúde do jardim tropical'),
-('Unidade básica de saúde do sitio do apicum'),
-('Unidade básica de saúde j lima'),
-('Unidade básica de saúde do j camara'),
-('Unidade básica de saúde dr Honório Ferreira Gomes'),
-('Unidade básica de saúde vila kiola');
+('UNIDADE BASICA DE SAUDE CANAA'),
+('UNIDADE BASICA DE SAUDE COHABIANO'),
+('UNIDADE BASICA DE SAUDE DA PINDOBA'),
+('UNIDADE BASICA DE SAUDE DA PIRAMIDE'),
+('UNIDADE BASICA DE SAUDE DAS MERCES'),
+('UNIDADE BASICA DE SAUDE DE COPACABANA'),
+('UNIDADE BASICA DE SAUDE IGUAIBA'),
+('UNIDADE BASICA DE SAUDE ITAPERA'),
+('UNIDADE BASICA DE SAUDE MAIOBA'),
+('UUNIDADE BASICA DE SAUDE MAIOBAO'),
+('UNIDADE BASICA DE SAUDE MOJO'),
+('UNIDADE BASICA DE SAUDE NOSSA SENHORA DA LUZ'),
+('UNIDADE BASICA DE SAUDE NOVA VIDA'),
+('UNIDADE BASICA DE SAUDE PARANA'),
+('UNIDADE BASICA DE SAUDE PINDAI'),
+('UNIDADE BASICA DE SAUDE SAFIRA'),
+('UNIDADE BASICA DE SAUDE SANTA RITA DE CASSIA'),
+('UNIDADE BASICA DE SAUDE TAMBAU'),
+('UNIDADE BASICA DE SAUDE VILA SAO JOSE'),
+('UNIDADE BASICA DE SAUDE VILA SAO PEDRO');
+
 
 -- MEMBROS--
+
 
 CREATE TABLE IF NOT EXISTS membros_familia (
   id              INT AUTO_INCREMENT PRIMARY KEY,
@@ -83,7 +72,9 @@ CREATE TABLE IF NOT EXISTS membros_familia (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
+
 -- AGENDAMENTO DE CONSULTAS --
+
 
 -- Especialidades médicas
 CREATE TABLE IF NOT EXISTS especialidades (
@@ -91,6 +82,7 @@ CREATE TABLE IF NOT EXISTS especialidades (
   nome  VARCHAR(100) NOT NULL,
   icone VARCHAR(50)
 );
+
 
 INSERT INTO especialidades (nome, icone) VALUES
 ('Clínico Geral',    'fa-plus'),
@@ -108,35 +100,41 @@ INSERT INTO especialidades (nome, icone) VALUES
 ('Psicólogo',        'fa-brain'),
 ('Psiquiatra',       'fa-comment-medical');
 
+
 -- Adiciona colunas na tabela ubs para endereço e funcionamento
 ALTER TABLE ubs
   ADD COLUMN endereco      VARCHAR(255) DEFAULT NULL,
-  ADD COLUMN funcionamento VARCHAR(100) DEFAULT 'Seg a Sex, 08h-17h',
+  ADD COLUMN funcionamento VARCHAR(100) DEFAULT 'Seg a Sex, 07h-17h',
   ADD COLUMN latitude      DECIMAL(10,7) DEFAULT NULL,
   ADD COLUMN longitude     DECIMAL(10,7) DEFAULT NULL;
 
--- UBS fictícia para testes (id 1 = São José dos Índios, já existe)
+
+-- UBS fictícia para testes (id 1 = São José, já existe)
 UPDATE ubs SET
-  endereco     = 'Vila São José, São José de Ribamar - MA, 65110-000',
-  funcionamento = 'Seg a Sex, 07h–16h',
+  endereco     = 'Canaa, Paço do Lumiar - MA, 65130-000',
+  funcionamento = 'Seg a Sex, 07h–17h',
   latitude     = -2.5501,
   longitude    = -44.0581
 WHERE id = 1;
 
+
 UPDATE ubs SET
-  endereco     = 'Parque Aracagy, São José de Ribamar - MA, 65110-000',
-  funcionamento = 'Seg a Sex, 08h–17h'
+  endereco     = 'Cohabiano, Paço do Lumiar - MA, 65130-000',
+  funcionamento = 'Seg a Sex, 07h–17h'
 WHERE id = 2;
 
-UPDATE ubs SET
-  endereco     = 'R. J.k - Mata, São José de Ribamar - MA, 65110-000',
-  funcionamento = 'Seg a Sex, 08h–17h'
-WHERE id = 13; -- pindaí
 
 UPDATE ubs SET
-  endereco     = 'Res. Turiúba, São José de Ribamar - MA, 65110-000',
-  funcionamento = 'Seg a Sáb, 07h–15h'
+  endereco     = 'Nova Vida, Paço do Lumiar - MA, 65130-000',
+  funcionamento = 'Seg a Sex, 07h–17h'
+WHERE id = 13; -- nova vida
+
+
+UPDATE ubs SET
+  endereco     = 'Piramide, Paço do Lumiar - MA, 65130-000',
+  funcionamento = 'Seg a Sáb, 07h–17h'
 WHERE id = 4;
+
 
 -- Quais especialidades cada UBS atende
 CREATE TABLE IF NOT EXISTS ubs_especialidades (
@@ -147,9 +145,11 @@ CREATE TABLE IF NOT EXISTS ubs_especialidades (
   FOREIGN KEY (especialidade_id) REFERENCES especialidades(id) ON DELETE CASCADE
 );
 
+
 -- Para teste: todas as especialidades nas 4 primeiras UBS
 INSERT IGNORE INTO ubs_especialidades (ubs_id, especialidade_id)
 SELECT u.id, e.id FROM ubs u, especialidades e WHERE u.id IN (1,2,4,13);
+
 
 -- Horários disponíveis (gerados automaticamente para teste)
 CREATE TABLE IF NOT EXISTS horarios (
@@ -162,6 +162,7 @@ CREATE TABLE IF NOT EXISTS horarios (
   FOREIGN KEY (ubs_id)          REFERENCES ubs(id)           ON DELETE CASCADE,
   FOREIGN KEY (especialidade_id) REFERENCES especialidades(id) ON DELETE CASCADE
 );
+
 
 -- Consultas agendadas
 CREATE TABLE IF NOT EXISTS consultas (
@@ -179,3 +180,5 @@ CREATE TABLE IF NOT EXISTS consultas (
   FOREIGN KEY (ubs_id)           REFERENCES ubs(id),
   FOREIGN KEY (especialidade_id) REFERENCES especialidades(id)
 );
+
+
